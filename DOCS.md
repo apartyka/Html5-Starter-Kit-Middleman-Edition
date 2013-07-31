@@ -1,8 +1,6 @@
-# Middleman / HTML5 Boilerplate Notes
+# Html5 Starter Kit: Middleman Edition Notes
 
 Please note that this port of the HTML5 Boilerplate has been converted to use HAML and Sprockets, while using a Middleman 3.x workflow.
-
-[The original HTML5 Boilerplate documentation](https://github.com/dannyprose/Middleman-HTML5BP-HAML/tree/master/html5bp-docs) is included at /html5bp-docs/ for your reference, but certain things (e.g. ways of including, specific javascript and CSS paths) may be different in our implementation.
 
 ## Recommendations
 
