@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff8b8797-2fb9-450b-86e3-72f75d6752eb" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp\www\Playground\Githubs\Html5-Starter-Kit-Middleman-Edition\source\crossdomain.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Html5-Starter-Kit-Middleman-Edition.iml" afterPath="$PROJECT_DIR$/.idea/Html5-Starter-Kit-Middleman-Edition.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\wamp\www\Playground\Githubs\Html5-Starter-Kit-Middleman-Edition\source\readme.md" afterPath="" />
     </list>
     <ignored path="Html5-Starter-Kit-Middleman-Edition.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -515,11 +511,6 @@
     <entry file="file://$PROJECT_DIR$/helpers/site_helpers.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1379" selection-end="1379" vertical-scroll-proportion="-382.5" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/css/_vendor/_normalize.scss">
