@@ -91,7 +91,7 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
   
-  # Create favicon/touch icon set from assets/favicon_base.png
+  # Create favicon/touch icon set from source/favicon_base.png
   activate :favicon_maker
   
   # Enable cache buster

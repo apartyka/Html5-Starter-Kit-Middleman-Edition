@@ -13,7 +13,7 @@
 	## REQUIRES
 		* Sass 3.2.x
 	## SETUP
-		* `cd {~path to directory~}/assets`
+		* `cd {~path to directory~}/source`
 		* `sass --watch scss:css --style compressed`
 	## MORE
 		* @import "spacing.scss" in your global *.scss file OR just put the following code within your global *.scss file.
@@ -23,7 +23,7 @@
 	/* ==========================================================================
 	   Global Space Variables
 	   ==========================================================================
-	   * Defined in `{path}/assets/_variables.scss`
+	   * Defined in `{path}/source/_variables.scss`
 		$default-space: 20px;
 		$default-space-half: $default-space/2;
 		$default-smaller: $default-space/2;

@@ -7,11 +7,11 @@ A combination of Resource's [HTML5 Starter Kit](http://stash.resource.com/projec
 
 
 ##Dependencies
-Install Ruby
-Install RubyGems
-[Install Middleman](http://middlemanapp.com/getting-started/#toc_1)
+- Install Ruby
+- Install RubyGems
+- [Install Middleman](http://middlemanapp.com/getting-started/#toc_1)
 
 
-##Resources and Recommended Reading
+###Resources and Recommended Reading
 - [Understanding Middleman](http://benfrain.com/understanding-middleman-the-static-site-generator-for-faster-prototyping/)
 
