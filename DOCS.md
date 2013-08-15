@@ -1,6 +1,6 @@
 # Html5 Starter Kit: Middleman Edition Notes
 
-Please note that this port of the HTML5 Boilerplate has been converted to use HAML and Sprockets, while using a Middleman 3.x workflow.
+Please note that this port of the Resource Html5 Starter Kit has been converted to use HAML and Sprockets, while using a Middleman 3.x workflow.
 
 ## Recommendations
 
