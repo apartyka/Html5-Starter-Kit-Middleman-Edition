@@ -6,7 +6,7 @@
 %html
   / <![endif]
   %head
-    / _HTML_Starter_Kit_v1.2.1
+    / Html5 Starter Kit Middleman Edition
     %meta{:charset => "utf-8"}
     
     /Mobile Viewport Fix
@@ -46,24 +46,23 @@
     -#Update favicon_base.png in /source and middleman-favicon-maker will generate all the versions you need on 'middleman build'
     -#OR, place favicon.ico and apple-touch-icon.png in /source and deactivate :favicon_maker in config.rb
     
-    = javascript_include_tag "vendor/modernizr-2.6.1.min"
+    = javascript_include_tag "lib/modernizr-2.6.1.min"
 
     = stylesheet_link_tag 'styles.css', {:media => 'all'};
-    - if data.page.styles != nil
-      - data.page.styles.each do |href|
+    - if data.page.pageStyles != nil
+      - data.page.pageStyles.each do |href|
         = stylesheet_link_tag href, {:media => 'all'}
 
     /[if lt IE 9] 
-      = javascript_include_tag "/vendor/html5shiv.js"
-    /[if IE] <link rel="stylesheet" type="text/css" href="/css/ie.css" />
+      = javascript_include_tag "lib/html5shiv.js"
   %body
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
         
-    %section{:role => "main", :class => "main container-full"}
+    %section{:class => "wrapper container-full"}
     
       =partial 'shared/header.haml'
     
-      #main.container
+      #application.container
         = yield
 
     =partial 'shared/footer.haml'

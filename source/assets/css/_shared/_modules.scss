@@ -3,13 +3,8 @@
 // Global variables - includes global colors and spaces
 @import "variables";
 @import "compass";
-/* ==========================================================================
-Module/Page Specific CSS: Contains CSS that is not global
-Examples: "About Page Only" CSS or a non-reusable component
-========================================================================== */
 
-/* index page */
-section[role='main'] {
-	border: 5px solid green;
-    @include box-sizing(border-box);
-}
+// ==========================================================================
+// Module/Page Specific CSS: Contains CSS that is not global
+// Examples: "About Page Only" CSS or a non-reusable component
+// ==========================================================================
