@@ -1,14 +1,11 @@
-/**
- * This is used for output of all CSS.
- * CSS selectors should not be added here.
- */
+// This is used for output of all CSS.
+// CSS selectors should not be added here.
 
-
-//= require "_vendor/_normalize.scss"
+// Change compass settings in config.rb
+@import "compass";
 
 // Normalize
 // @import "_vendor/normalize-full"; // http://necolas.github.com/normalize.css/ This is not required, it uses the full normalize file
 @import "_vendor/normalize"; // This is not required but it's a custom version of normalize-full.scss, it's bare bones.
-@import "compass";
 @import "_shared/global"; // Global Classes/Styles
 @import "_shared/modules"; // Module/Screen Specific Styling
