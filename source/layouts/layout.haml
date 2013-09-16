@@ -15,26 +15,11 @@
     /initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
     /maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (/not recommended for accessibility reasons)
 
-    / Open Graph Meta Data
-    / %meta{:content => "", :property => "og:title"}/
-    / %meta{:content => "", :property => "og:description"}/
-    / %meta{:content => "", :property => "og:url"}/
-    / %meta{:content => "company", :property => "og:type"}/
-    / %meta{:content => "", :property => "og:site_name"}/
-    / %meta{:content => "", :property => "og:image"}/  
-    / Windows 8 Meta Data
-    / %meta{:content => "", :name => "application-name"}/
-    / %meta{:content => "", :name => "msapplication-TileColor"}/
-    / %meta{:content => "", :name => "msapplication-TileImage"}/
-    / Twitter Meta Data
-    / %meta{:content => "", :name => "twitter:title"}/
-    / %meta{:content => "", :name => "twitter:url"}/
-    / %meta{:content => "", :name => "twitter:description"}/
-    / %meta{:content => "", :name => "twitter:site"}/
-    / %meta{:content => "", :name => "twitter:card"}/
+    =partial 'shared/vendor/meta'
 
     -# To set titles and descriptions globally and for each individual page, see /DOCS.md
     %title #{data.page.title != nil ? data.page.title : 'No Title'}
+
     %meta{:content => page_description, :name => "description"}
     %meta{:content => "", :name => "keywords"}/
     
@@ -49,7 +34,7 @@
     = javascript_include_tag "lib/modernizr-2.6.1.min"
 
     = stylesheet_link_tag 'styles.css', {:media => 'all'};
-    - if data.page.pageStyles != nil
+    - if data.page.pageStyles
       - data.page.pageStyles.each do |href|
         = stylesheet_link_tag href, {:media => 'all'}
 
@@ -58,11 +43,11 @@
   %body
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
         
-    %section{:class => "wrapper container-full"}
+    %section{:id => "application", :class => "container-full"}
     
       =partial 'shared/header.haml'
     
-      #application.container
+      .container
         = yield
 
     =partial 'shared/footer.haml'
