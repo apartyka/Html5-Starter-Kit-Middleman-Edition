@@ -18,8 +18,8 @@ LiveReload and Compass are included as optional project gems. Check the config.r
 
 ## Development Cycle
 Console commands
-"bundle exec middleman server". Boots up a server with the default host and port http://0.0.0.0:4567/
-"middleman build". Builds your project files into html and css.
+- "bundle exec middleman server". Boots up a server with the default host and port http://0.0.0.0:4567/
+- "middleman build". Builds your project files into html and css.
 
 ###Recommended Reading and Resources
 - [Understanding Middleman](http://benfrain.com/understanding-middleman-the-static-site-generator-for-faster-prototyping/)
