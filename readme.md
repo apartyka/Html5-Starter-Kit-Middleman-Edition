@@ -10,8 +10,8 @@ Checkout the config.rb file for all the global project settings: such as, build 
 LiveReload and Compass are included as optional project gems. Check the config.rb file for settings.
 
 ##Dependencies
-- Install Ruby. Mac users are good to go already. [
--- Windows users: get RubyInstaller](https://forwardhq.com/support/installing-ruby-windows)
+- Install Ruby. Mac users are good to go already.
+- [Windows users: get RubyInstaller](https://forwardhq.com/support/installing-ruby-windows)
 - Install RubyGems. [Mac users go here](http://rubygems.org/pages/download)
 - [Install Middleman](http://middlemanapp.com/getting-started/#toc_1)
 - If you don't have the "bundler" gem already, you will need to install it. Run the following command in your console: "gem install bundler". Bundler handles all the gem dependencies defined in the project's Gemfile.
