@@ -2,15 +2,12 @@
 set :markdown_engine, :redcarpet
 
 #Livereload
-activate :livereload
+#Windows users need to specify their development port - https://github.com/middleman/middleman-livereload/issues/26
+activate :livereload, :host => '10.99.242.59'
 
 ### 
 # Compass
 ###
-
-# Susy grids in Compass
-# First: gem install compass-susy-plugin
-# require 'susy'
 
 # Change Compass configuration
 compass_config do |config|
