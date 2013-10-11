@@ -3,7 +3,7 @@ set :markdown_engine, :redcarpet
 
 #Livereload
 #Windows users need to specify their development port - https://github.com/middleman/middleman-livereload/issues/26
-activate :livereload
+activate :livereload, :host => '10.99.242.59'
 
 ### 
 # Compass
@@ -90,18 +90,18 @@ configure :build do
   activate :minify_javascript
   
   # Create favicon/touch icon set from source/favicon_base.png
-  activate :favicon_maker
+  #activate :favicon_maker
   
   # Enable cache buster
   # activate :cache_buster
   
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
   
   # Compress PNGs after build
   # First: gem install middleman-smusher
-  require "middleman-smusher"
-  activate :smusher
+  #require "middleman-smusher"
+  #activate :smusher
   
   # Or use a different image path
   # set :http_path, "/Content/images/"

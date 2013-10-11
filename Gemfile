@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 
 gem "middleman", "~>3.1.5"
 
-gem "middleman-favicon-maker"
+#gem "middleman-favicon-maker"
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
