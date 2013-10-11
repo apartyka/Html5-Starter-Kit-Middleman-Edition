@@ -192,6 +192,9 @@ node_modules/
 
 #Ruby
 *.lock
+Gemfile
+Gemfile.lock
 
 #Production Build
 _compiled
+build/
