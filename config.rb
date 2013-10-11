@@ -3,7 +3,7 @@ set :markdown_engine, :redcarpet
 
 #Livereload
 #Windows users need to specify their development port - https://github.com/middleman/middleman-livereload/issues/26
-activate :livereload, :host => '10.99.242.59'
+activate :livereload
 
 ### 
 # Compass
