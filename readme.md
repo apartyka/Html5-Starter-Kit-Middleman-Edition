@@ -22,8 +22,5 @@ Console commands
 - "middleman build". Builds your project files into html and css.
 
 ###Recommended Reading and Resources
-- [Middleman Guides](https://github.com/middleman/middleman-guides)
-- [Middleman Github Docs](https://github.com/middleman/middleman)
-- [Helpers basics](http://middlemanapp.com/helpers/)
 - [Understanding Middleman](http://benfrain.com/understanding-middleman-the-static-site-generator-for-faster-prototyping/)
 
