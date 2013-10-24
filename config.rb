@@ -1,11 +1,19 @@
 #Markdown
 set :markdown_engine, :redcarpet
 
+#Directory settings
+set :css_dir, 'assets/css'
+set :js_dir, 'assets/js'
+set :images_dir, 'assets/images'
+
 #Livereload
 #Windows users need to specify their development port - https://github.com/middleman/middleman-livereload/issues/26
-activate :livereload, :host => '10.99.242.59'
+activate :livereload, :host => '10.99.242.192'
 
-### 
+# Automatic image dimensions on image_tag helper
+# activate :automatic_image_sizes
+
+###
 # Compass
 ###
 
@@ -37,12 +45,36 @@ end
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
 
+# ----------------------------------------------------------------------------------------------------------------------
+# Build-specific configuration:  The following is only applied when building a project.
+# ----------------------------------------------------------------------------------------------------------------------
+configure :build do
+
+  # Use relative URLs
+  activate :relative_assets
+
+  #activate :minify_css
+
+  #activate :minify_javascript
+  
+  # Create favicon/touch icon set from source/favicon_base.png
+  #activate :favicon_maker
+  
+  # Enable cache buster
+  # activate :cache_buster
+  
+  # Compress PNGs after build
+  # First: gem install middleman-smusher
+  #require "middleman-smusher"
+  #activate :smusher
+  
+  # Or use a different image path
+  # set :http_path, "/Content/images/"
+end
+
 ###
 # Helpers
 ###
-
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
 #helpers do
@@ -74,35 +106,3 @@ end
 #    end
 #  end
 #end
-
-set :css_dir, 'assets/css'
-
-set :js_dir, 'assets/js'
-
-set :images_dir, 'assets/images'
-
-# Build-specific configuration
-configure :build do
-  # For example, change the Compass output style for deployment
-  activate :minify_css
-  
-  # Minify Javascript on build
-  activate :minify_javascript
-  
-  # Create favicon/touch icon set from source/favicon_base.png
-  #activate :favicon_maker
-  
-  # Enable cache buster
-  # activate :cache_buster
-  
-  # Use relative URLs
-  activate :relative_assets
-  
-  # Compress PNGs after build
-  # First: gem install middleman-smusher
-  #require "middleman-smusher"
-  #activate :smusher
-  
-  # Or use a different image path
-  # set :http_path, "/Content/images/"
-end
