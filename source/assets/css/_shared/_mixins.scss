@@ -5,6 +5,7 @@
 //   Global Mixins
 // ==========================================================================
 
+// clearing floats
 @mixin clear() {
   &:before,
   &:after {
@@ -19,6 +20,7 @@
   }
 }
 
+// hover, active, and focus
 @mixin hoverActiveFocus( $property, $value ) {
   &:hover,
   &:active,

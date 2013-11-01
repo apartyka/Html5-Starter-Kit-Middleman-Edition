@@ -5,6 +5,7 @@ set :markdown_engine, :redcarpet
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
 set :images_dir, 'assets/images'
+set :partials_dir, '/shared'
 
 #Livereload
 #Windows users need to specify their development port - https://github.com/middleman/middleman-livereload/issues/26
