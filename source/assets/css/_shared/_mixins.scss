@@ -13,13 +13,16 @@
     height: 0;
     overflow: hidden;
   }
+
   &:after {
     clear: both;
   }
 }
 
 @mixin hoverActiveFocus( $property, $value ) {
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     #{$property}: $value;
   }
 }
