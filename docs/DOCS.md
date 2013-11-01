@@ -10,9 +10,6 @@ Please note that this port of the Resource Html5 Starter Kit has been converted 
 * If you don't use `middleman init` to load the template, make sure to [use and run Bundler](http://gembundler.com/).
 
 ## Site and Individual Page Titles and Descriptions
-
-One change we have made from the Boilerplate is some smarter ways of handling site/page titles and descriptions.
-
 Titles and descriptions are handled 2 ways:
 
 For the site at large, the title & description is handled through `/helpers/site_helpers.rb`. You can set them there, and the default layout file will include them on every page.
@@ -34,6 +31,6 @@ To change, individual page's titles and descriptions, see the YAML method above.
 
 ### But I Don't Want This
 
-No problem - we only included it because we just thought this was a good, DRY use case for Middelman, and it is what the Middleman Docs site uses. 
+No problem - it's included because we thought this was a good, DRY use case for Middleman, and it is what the Middleman Docs site uses.
 
 If you want to develop a method of your own, just remove the `page_title` and `page_description` methods in `/helpers/site_helpers.rb`, remove their references in `/layouts/layout.haml` (all within `<head>`), and restart Middleman. Then do whatever you want to include titles and headers.

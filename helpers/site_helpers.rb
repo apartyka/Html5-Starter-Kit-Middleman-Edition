@@ -1,11 +1,10 @@
 module SiteHelpers
 
   def page_title
-    title = "Middleman: "
     if data.page.title
-      title << data.page.title
+      title = data.page.title
     else
-      title << "Hand-crafted frontend development"
+      title = "set title in site_helpers.rb"
     end
     title
   end
@@ -14,7 +13,7 @@ module SiteHelpers
     if data.page.description
       description = data.page.description
     else
-      description = 'set description in site_helpers.rb'
+      description = "set description in site_helpers.rb"
     end
     description
   end
