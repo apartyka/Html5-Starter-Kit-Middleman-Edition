@@ -53,12 +53,9 @@ configure :build do
   # Use relative URLs
   activate :relative_assets
 
-  #activate :minify_css
-
-  #activate :minify_javascript
-  
-  # Create favicon/touch icon set from source/favicon_base.png
-  #activate :favicon_maker
+  # Minify assets
+  activate :minify_css
+  activate :minify_javascript
   
   # Enable cache buster
   # activate :cache_buster
