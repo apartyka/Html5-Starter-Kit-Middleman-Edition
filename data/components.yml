@@ -1,0 +1,19 @@
+---
+mainNav:
+  links:
+    -
+      name: "Home"
+      href: "#home"
+    -
+      name: "Another Link"
+      href: "#anotherLink"
+    -
+      name: "Another Link"
+      href: "#anotherLink"
+    -
+      name: "Another Link"
+      href: "#anotherLink"
+    -
+      name: "Another Link"
+      href: "#anotherLink"
+---

@@ -1,0 +1,8 @@
+:ruby
+  mainNav = data.components.mainNav
+
+%nav.main-nav.padding--2x
+  %ul
+    - mainNav.links.each do |i|
+      %li.margin-left
+        %a{ :href => i.href } #{i.name}
