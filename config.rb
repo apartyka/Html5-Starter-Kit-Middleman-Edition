@@ -8,8 +8,7 @@ set :images_dir, 'assets/images'
 
 #Livereload
 #Windows users need to specify their development port - https://github.com/middleman/middleman-livereload/issues/26
-#Mac users will not need to specify the :host object
-activate :livereload, :host => '10.99.242.192'
+activate :livereload
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes

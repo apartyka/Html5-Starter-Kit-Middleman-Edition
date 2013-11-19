@@ -15,20 +15,19 @@
     /maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (/not recommended for accessibility reasons)
 
     -#Vendor specific meta
-    -#=partial 'shared/vendor/meta'
+    -#=partial 'partials/vendor/meta'
 
     -# To set titles and descriptions globally and for each individual page, see /DOCS.md
     %title
       = page_title
     %meta{ :content => page_description, :name => 'description' }
-
     %meta{ :content => '', :name => 'keywords' }/
 
     %meta{ :content => 'true', :name => 'HandheldFriendly' }
     %meta{ :content => 'width=device-width, initial-scale=1.0, minimum-scale=1.0', :name => 'viewport' }/
     %meta{ :content => 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }/
     %meta{ :content => 'yes', :name => 'apple-mobile-web-app-capable' }/
-    
+
     = javascript_include_tag ('lib/modernizr-2.6.2.dev.js')
 
     = stylesheet_link_tag 'styles.css', { :media => 'all' };
@@ -40,15 +39,17 @@
       = javascript_include_tag ('lib/html5shiv.js')
 
   %body
+    /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
 
     .container-full{ :id => 'application' }
     
-      =partial 'shared/header.haml'
+      %header.container.clearfix
+        =partial 'partials/header'
     
       .container{ :id => 'main' }
         = yield
 
-    =partial 'shared/footer.haml'
+    =partial 'partials/footer.haml'
 
   %script{ :src => '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' }/
   :javascript
