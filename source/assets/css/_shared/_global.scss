@@ -15,7 +15,7 @@ Master Base Template - Structure
 body {
     background-color: #f5f5f5;
     color: #333;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    font-family: $ruda-regular-400, "Lucida Sans Unicode", sans-serif;
     font-size: 1em;
     line-height: 1.250; /* unitless line-height: http://cssleading.com/ */
     -webkit-overflow-scrolling: touch;
@@ -28,10 +28,12 @@ img {
 /* ==========================================================================
 Typography
 ========================================================================== */
+@import "fonts";
+
 h1,
-h2 {
-    color: #444;
-    text-shadow: 1px 1px 0 #fff;
+h2,
+h3 {
+  @extend %headings;
 }
 
 h1 {
@@ -48,6 +50,9 @@ p {
     text-shadow: 1px 1px 0 rgba(255,255,255,.8);
 }
 
+strong {
+    font-weight: 900;
+}
 
 /* ==========================================================================
 Links
