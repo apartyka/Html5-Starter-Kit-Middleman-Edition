@@ -1,0 +1,9 @@
+// Custom web fonts
+
+@include font-face("BebasRegular", font-files("bebas___.ttf", "bebas___.eot", "bebas___.woff"));
+
+%headings {
+  font-family: "BebasRegular";
+  color: #444;
+  text-shadow: 1px 1px 0 #fff;
+}
