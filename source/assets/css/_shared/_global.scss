@@ -45,9 +45,13 @@ h2 {
     font-size: 1.333em;
 }
 
-h3 {
+h3, h4, h5 {
     margin-bottom: 0;
     margin-top: 0;
+}
+
+h4 {
+    color: $deep-blue;
 }
 
 p {
@@ -134,14 +138,14 @@ Positioning
 Header
 ========================================================================== */
 .logo {
-  float: left;
+    float: left;
 }
 
 /* ==========================================================================
 Main Nav
 ========================================================================== */
 .main-nav {
-  background-color: $amber-red;
+    background-color: $amber-red;
   a {
     color: $white;
     font-weight: bold;
@@ -158,6 +162,31 @@ Lists
 ul {
   margin-bottom: 0;
   margin-top: 0;
+}
+
+/* ==========================================================================
+Experience module
+========================================================================== */
+#experience {
+    p {
+        margin-bottom: $default-space--half;
+        margin-top: $default-space--half;
+    }
+
+    .entry {
+        margin-bottom: $default-space--2x;
+        margin-top: $default-space;
+    }
+}
+
+/* ==========================================================================
+Sidebar module
+========================================================================== */
+sidebar {
+    p {
+        margin-bottom: $default-space--half;
+        margin-top: $default-space--half;
+    }
 }
 
 /* ==========================================================================
