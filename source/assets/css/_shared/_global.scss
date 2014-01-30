@@ -15,23 +15,26 @@ Master Base Template - Structure
 body {
     background-color: #f5f5f5;
     color: #333;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    font-family: $ruda-regular-400, "Lucida Sans Unicode", sans-serif;
     font-size: 1em;
     line-height: 1.250; /* unitless line-height: http://cssleading.com/ */
+    margin: 0;
     -webkit-overflow-scrolling: touch;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 /* ==========================================================================
 Typography
 ========================================================================== */
+@import "fonts";
+
 h1,
-h2 {
-    color: #444;
-    text-shadow: 1px 1px 0 #fff;
+h2,
+h3 {
+  @extend %headings;
 }
 
 h1 {
@@ -42,12 +45,24 @@ h2 {
     font-size: 1.333em;
 }
 
+h3, h4, h5 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h4 {
+    color: $deep-blue;
+}
+
 p {
     margin-bottom: 0;   // zero out default user agent style
     margin-top: 0;  // zero out default user agent style
     text-shadow: 1px 1px 0 rgba(255,255,255,.8);
 }
 
+strong {
+    font-weight: 900;
+}
 
 /* ==========================================================================
 Links
@@ -86,16 +101,27 @@ header {
 .container-full {
     > [class^="container"] {
         width: $max-width;
-
-        @media screen and ( max-width: $max-width + $default-space * 2 ) { // Keep "fluid feel" of gutters for containers
+        @media ( max-width: $max-width + $default-space * 2 ) { // Keep "fluid feel" of gutters for containers
             margin-left: $default-space;
             margin-right: $default-space;
             width: auto;
         }
 
-        @media screen and ( max-width:400px ) {
+        @media ( max-width: $breakpoint-phone ) {
             margin-left: $default-space--smaller;
             margin-right: $default-space--smaller;
+
+            .hide-mobile {
+                display: none;
+            }
+
+            .full-width-mobile {
+                width: 100%;
+                > div {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
         }
 
     }
@@ -112,14 +138,14 @@ Positioning
 Header
 ========================================================================== */
 .logo {
-  float: left;
+    float: left;
 }
 
 /* ==========================================================================
 Main Nav
 ========================================================================== */
 .main-nav {
-  background-color: $amber-red;
+    background-color: $amber-red;
   a {
     color: $white;
     font-weight: bold;
@@ -136,6 +162,31 @@ Lists
 ul {
   margin-bottom: 0;
   margin-top: 0;
+}
+
+/* ==========================================================================
+Experience module
+========================================================================== */
+#experience {
+    p {
+        margin-bottom: $default-space--half;
+        margin-top: $default-space--half;
+    }
+
+    .entry {
+        margin-bottom: $default-space--2x;
+        margin-top: $default-space;
+    }
+}
+
+/* ==========================================================================
+Sidebar module
+========================================================================== */
+sidebar {
+    p {
+        margin-bottom: $default-space--half;
+        margin-top: $default-space--half;
+    }
 }
 
 /* ==========================================================================
