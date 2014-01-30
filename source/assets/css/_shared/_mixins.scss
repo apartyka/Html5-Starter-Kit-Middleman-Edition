@@ -1,30 +1,113 @@
 // Global variables
+// Contains widths, breakpoints, spacing, and colors
 @import "variables";
 
 // ==========================================================================
 //   Global Mixins
 // ==========================================================================
 
+@mixin fixed( $top: 0, $left: null, $bottom: null, $right: null )  {    
+    bottom: $bottom;
+    position: fixed;
+    top: $top;
+    left: $left;
+    right: $right;
+    transform: translateZ(0px);
+    z-index: 790;
+}
+
 // clearing floats
 @mixin clear() {
-  &:before,
-  &:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    overflow: hidden;
-  }
+    &:before, &:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      overflow: hidden;
+    }
 
-  &:after {
-    clear: both;
-  }
+    &:after {
+      clear: both;
+    }
 }
 
 // hover, active, and focus
 @mixin hoverActiveFocus( $property, $value ) {
-  &:hover,
-  &:active,
-  &:focus {
-    #{$property}: $value;
-  }
+    &:hover, &:active, &:focus {
+      #{ $property }: $value;
+    }
 }
+
+// ==================================================
+// $Media Query @Mixin
+// http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+// ==================================================
+
+// Supports 
+// @media min-width
+// @media max-width
+// @media min-width and max-width
+
+$viewport-increment: 0.1px; // customize to suite
+
+// Desktop
+$desktop: 1024px; // customize to suite
+$pre-desktop: $desktop - $viewport-increment;
+
+// Tablet
+$tablet: 768px; // customize to suite
+$pre-tablet: $tablet - $viewport-increment;
+
+// Palm
+$palm: 640px; // customize to suite
+$post-palm: $palm + $viewport-increment;
+
+// Constraints
+$min: min-width;
+$max: max-width;
+
+@mixin mediaQuery( $constraint, $viewport1, $viewport2: null ) {
+
+  @if $constraint == $min {
+
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+
+  } @else if $constraint == $max {
+
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+
+  } @else {
+
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+
+  }
+
+}
+
+
+// ==================================================
+// The Implementation!
+// ==================================================
+
+// p {
+//   @include mediaQuery($max, $palm) {
+//     font-size: 75%;
+//   }
+
+//   @include mediaQuery(null, $post-palm, $pre-tablet) {
+//     font-size: 87.5%;
+//   }
+ 
+//   @include mediaQuery($min, $tablet) {
+//     font-size: 100%;
+//   }
+  
+//   @include mediaQuery($min, $desktop) {
+//     font-size: 108.75%;
+//   }
+// }

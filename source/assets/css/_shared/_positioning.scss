@@ -2,16 +2,42 @@
 // Basic positioning partial with columns. Use a nested div within a column to add padding if space is needed
 // ==========================================================================
 
+// Takes 4 position arguments - defaults to top: 0
+// top, left, bottom, right
+%fixed {
+    @include fixed();
+}
+
 .flc {
     overflow: hidden;
 }
 
-.fl-lt {
+.fl-left {
     float: left;
 }
 
-.fl-rt {
+.fl-right {
     float: right;
+}
+
+.fixed, .sticky-header {
+    @extend %fixed;
+}
+
+.display-b {
+    display: block;
+}
+
+.display-ib {
+    display: inline-block;
+}
+
+.display-i {
+    display: inline;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .col-wrap {
@@ -21,6 +47,7 @@
     .col {
         display: block;
         float: left;
+        
         &:first-child {
             margin-right: -1px;
         }

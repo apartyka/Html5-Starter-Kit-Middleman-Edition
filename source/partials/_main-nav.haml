@@ -1,8 +1,10 @@
 :ruby
   mainNav = data.components.mainNav
 
-%nav.main-nav.padding--2x
-  %ul
+%nav#main-nav.col-wrap.flc.padding--verticals--half.font-oswald
+  %ul.col.col-3-2.margin-left
     - mainNav.links.each do |i|
       %li.margin-left
-        %a{ :href => i.href } #{i.name}
+        %a{ :href => i.href } #{ i.name }
+
+  =partial 'partials/search'        

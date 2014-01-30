@@ -1,0 +1,39 @@
+// Cart mini is @imported into global-header.scss
+
+/* ==========================================================================
+Mini Cart in Global Header
+========================================================================== */
+.cart-mini {	
+	font-weight: $font-bold-weight;
+	text-transform: uppercase;
+
+	a {
+		display: inline-block;
+		padding: $default-space--half - 1;
+
+		&:hover {
+			color: $color-mustard-yellow;
+			text-decoration: none;
+		}
+	}
+
+	span {
+		margin-left: $default-space;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	.items {
+		font-size: (13em/16);
+	}	
+}
+
+.price-total {
+	margin-left: $default-space--half;	
+
+	&:first-child {
+		margin-right: 0;
+	}
+}

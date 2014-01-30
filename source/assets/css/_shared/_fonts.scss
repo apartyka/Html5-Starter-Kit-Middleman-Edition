@@ -1,9 +1,44 @@
 // Custom web fonts
 
-@include font-face("BebasRegular", font-files("bebas___.ttf", "bebas___.eot", "bebas___.woff"));
+//@include font-face("BebasRegular", font-files("bebas___.ttf", "bebas___.eot", "bebas___.woff"));
 
-%headings {
-  font-family: "BebasRegular";
-  color: $amber-red;
-  text-shadow: 1px 1px 0 #fff;
+$webfont-active: true; //Using a custom font? Set it true here to output the custom classes below.
+
+$font-default: "Futura", "Trebuchet MS", Arial, sans-serif;
+$font-default-size: 1em;
+
+$font-oswald: "Oswald"; // Available weights: Light 300, Normal 400, Bold 700
+$font-light-weight: 300;
+$font-normal-weight: 400;
+$font-bold-weight: 700;
+
+
+// h1-h5
+@mixin headings {
+	//color: $color-mustard-yellow;
+	//text-shadow: 1px 1px 0 #fff;
+	text-transform: uppercase;
+}
+
+/* ==========================================================================
+Global Fonts
+========================================================================== */
+
+//@if .wf-active class is on html write these classes, @else do nothing
+@if ($webfont-active) {
+	.font-light-weight {
+		font-weight: $font-light-weight;
+	}
+
+	.font-normal-weight {
+		font-weight: $font-normal-weight;
+	}
+
+	.font-bold-weight {
+		font-weight: $font-bold-weight;
+	}
+
+	.font-oswald {
+		font-family: $font-oswald, $font-default;
+	}
 }

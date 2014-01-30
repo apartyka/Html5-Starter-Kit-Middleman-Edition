@@ -55,16 +55,16 @@
 
   @if ($include-2x) {
     .#{$class-name}--2x {
-  #{$property}: $space * 2;
-}
+      #{$property}: $space * 2;
+    }
   }
 
-@if ($include-smallest) {
-  .#{$class-name}--smallest {
-    #{$property}: $space--smallest;
+  @if ($include-smallest) {
+    .#{$class-name}--smallest {
+      #{$property}: $space--smallest;
+    }
   }
 }
-  }
 
 // ==========================================================================
 // Global Padding, Margin, and Spacing
