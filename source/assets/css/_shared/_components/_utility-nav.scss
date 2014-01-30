@@ -1,0 +1,21 @@
+// Utility nav is @imported into global-header.scss
+
+/* ==========================================================================
+Utility Nav
+========================================================================== */
+.utility-nav {
+	font-family: $font-default;
+	font-size: (11em/16);
+
+	ul {
+		margin-top: $default-space--half + 3;
+	}
+
+	li {
+		margin-left: $default-space;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}	
+}

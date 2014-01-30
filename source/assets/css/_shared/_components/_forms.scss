@@ -1,0 +1,15 @@
+// Forms is @imported into global-header.scss
+
+// could prolly add this to normalize ...
+
+/* ==========================================================================
+Global Form elements
+========================================================================== */
+fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset, input[type='text'] {
+	border: none;
+}

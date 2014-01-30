@@ -2,18 +2,33 @@
 mainNav:
   links:
     -
-      name: "Home"
-      href: "#home"
+      name: "New Arrivals"
+      href: "#new-arrivals"
     -
-      name: "Another Link"
-      href: "#anotherLink"
+      name: "Top Looks"
+      href: "#top-looks"
     -
-      name: "Another Link"
-      href: "#anotherLink"
+      name: "Apparel"
+      href: "#apparel"
     -
-      name: "Another Link"
-      href: "#anotherLink"
+      name: "Jewelry & Accessories"
+      href: "#Jewelry & Accessories"
     -
-      name: "Another Link"
-      href: "#anotherLink"
+      name: "Online Exclusives"
+      href: "#Online Exclusives"
+    -
+      name: "Sale"
+      href: "#sale"
+
+utilityNav:
+  links:
+    -
+      name: "Account"
+      href: "#account"
+    -
+      name: "Wish List"
+      href: "#wish-list"
+    -
+      name: "Stores"
+      href: "#store-locator"
 ---

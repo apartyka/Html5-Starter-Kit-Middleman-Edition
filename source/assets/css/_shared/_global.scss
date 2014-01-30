@@ -1,8 +1,18 @@
 // Global mixins
+// i.e., Helper methods
 @import "mixins";
 
 // Global variables
+// Contains widths, breakpoints, spacing, and colors
 @import "variables";
+
+// Global font rules
+// Contains body element styles, headings (h1, h2, etc.)
+@import "fonts";
+
+// Global icon rules
+// Contains custom "icon font" rules, see ReadMe file in "assets/fonts/icons" for more info
+@import "icons";
 
 
 /* ==========================================================================
@@ -12,11 +22,16 @@ Master Base Template - Structure
     @include box-sizing(content-box);
 }
 
+html {
+    background-color: $color-black;
+}
+
 body {
-    background-color: #f5f5f5;
-    color: #333;
-    font-family: $ruda-regular-400, "Lucida Sans Unicode", sans-serif;
-    font-size: 1em;
+    background-color: $color-white;
+    color: rgb(102, 102, 102);
+    font-family: $font-default;
+    font-size: $font-default-size;
+    font-weight: $font-normal-weight;
     line-height: 1.250; /* unitless line-height: http://cssleading.com/ */
     margin: 0;
     -webkit-overflow-scrolling: touch;
@@ -27,18 +42,15 @@ img {
 }
 
 /* ==========================================================================
-Typography
+Base Typography
 ========================================================================== */
-@import "fonts";
-
-h1,
-h2,
-h3 {
-  @extend %headings;
+h1, h2, h3, h4, h5 {
+    @include headings;
+    font-weight: $font-bold-weight;
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 h2 {
@@ -50,47 +62,71 @@ h3, h4, h5 {
     margin-top: 0;
 }
 
-h4 {
-    color: $deep-blue;
-}
+// h4, h5 {
+//     color: $color-deep-blue;
+// }
 
 p {
     margin-bottom: 0;   // zero out default user agent style
     margin-top: 0;  // zero out default user agent style
-    text-shadow: 1px 1px 0 rgba(255,255,255,.8);
 }
 
 strong {
-    font-weight: 900;
+    font-weight: $font-bold-weight;
 }
 
 /* ==========================================================================
 Links
 ========================================================================== */
 a {
-    color: #666;
+    color: $color-gray;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+    
     &:hover {
         text-decoration: underline;
     }
 }
 
+/* ==========================================================================
+Lists
+========================================================================== */
+ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    
+    > li {
+        display: inline-block;
+    }
+}
 
 /* ==========================================================================
 Containers & Holders
 ========================================================================== */
-header {
-    margin-left: auto;
-    margin-right: auto;
-    ul {
-        padding: 0;
-        list-style-type: none;
-        > li {
-            display: inline-block;
-            padding-right: $default-space--smallest;
-        }
-    }
+// header {
+//     margin-left: auto;
+//     margin-right: auto;
+    
+//     ul {
+//         padding: 0;
+//         list-style-type: none;
+        
+//         > li {
+//             display: inline-block;
+//             padding-right: $default-space--smallest;
+//         }
+//     }
+// }
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+#main {
+    min-height: 100%;
+    position: relative;
 }
 
 [class*="container"] {
@@ -101,6 +137,7 @@ header {
 .container-full {
     > [class^="container"] {
         width: $max-width;
+        
         @media ( max-width: $max-width + $default-space * 2 ) { // Keep "fluid feel" of gutters for containers
             margin-left: $default-space;
             margin-right: $default-space;
@@ -117,57 +154,27 @@ header {
 
             .full-width-mobile {
                 width: 100%;
+                
                 > div {
                     padding-left: 0;
                     padding-right: 0;
                 }
             }
         }
-
     }
 }
 
 /* ==========================================================================
-Positioning
+Clearing
 ========================================================================== */
 .clearfix {
     @include clear();
 }
 
 /* ==========================================================================
-Header
+Content component
 ========================================================================== */
-.logo {
-    float: left;
-}
-
-/* ==========================================================================
-Main Nav
-========================================================================== */
-.main-nav {
-    background-color: $amber-red;
-  a {
-    color: $white;
-    font-weight: bold;
-    &:hover {
-      color: $mustard-yellow;
-      text-decoration: none;
-    }
-  }
-}
-
-/* ==========================================================================
-Lists
-========================================================================== */
-ul {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-/* ==========================================================================
-Experience module
-========================================================================== */
-#experience {
+.content {
     p {
         margin-bottom: $default-space--half;
         margin-top: $default-space--half;
@@ -180,16 +187,11 @@ Experience module
 }
 
 /* ==========================================================================
-Sidebar module
-========================================================================== */
-sidebar {
-    p {
-        margin-bottom: $default-space--half;
-        margin-top: $default-space--half;
-    }
-}
-
-/* ==========================================================================
 Global Padding & Margin
 ========================================================================== */
 @import "spacing";
+
+/* ==========================================================================
+Global Column Structure
+========================================================================== */
+@import "positioning";

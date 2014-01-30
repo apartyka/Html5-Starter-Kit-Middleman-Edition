@@ -38,24 +38,29 @@
     /[if lt IE 9] 
       = javascript_include_tag ('lib/html5shiv.js')
 
-  %body
+  %body{ :id => 'application' }
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+  
+  #wrapper
 
-  -#%header.container-full.clearfix
-  -#  =partial 'partials/header'
+    %header{ :id => 'global-header', :class => 'container-full clearfix' }
+      =partial 'partials/global-header'
 
-  .container-full{ :id => 'application' }
+    .container-full
 
-    .container{ :id => 'main' }
-      = yield
+      %section.container{ :id => 'main' }
+        = yield
 
-    =partial 'partials/footer.haml'
+    %footer{ :id => 'global-footer', :class => 'container-full' }
+      =partial 'partials/global-footer.haml'
 
   %script{ :src => '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' }/
   :javascript
     window.jQuery || document.write('<script src="assets/js/lib/jquery.min.js"><\/script>')
 
-  = javascript_include_tag('main.js')
+  /= javascript_include_tag('App.js')
+  = javascript_include_tag('StickyHeader.js')
+  = javascript_include_tag('Fonts.js')
 
   :javascript
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

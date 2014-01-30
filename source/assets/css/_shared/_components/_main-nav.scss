@@ -1,0 +1,45 @@
+// Main Nav is @imported into global-header.scss
+
+/* ==========================================================================
+Global Header
+========================================================================== */
+#global-header {
+    background-color: $color-white;
+    height: 84px;
+    position: relative;
+}
+
+
+// dunno if we need this yet
+#global-header.fixed {
+    width: 100%;
+}
+
+#logo {
+    height: 38px;
+}
+
+/* ==========================================================================
+Main Nav
+========================================================================== */
+#main-nav {
+    background-color: #000;
+    clear: both;
+    transform: translateZ(0px);
+
+    li {
+        vertical-align: middle;
+    }
+    
+    a {
+        color: $color-white;
+        font-size: (14em/16);
+        padding: $default-space--smallest;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $color-mustard-yellow;
+          text-decoration: none;
+        }
+    }
+}

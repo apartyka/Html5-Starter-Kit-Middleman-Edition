@@ -1,0 +1,12 @@
+// Search is @imported into global-header.scss
+
+/* ==========================================================================
+Search in Global Header
+========================================================================== */
+#search {
+	input[type='text'] {
+		color: #999;
+		font-weight: $font-light-weight;
+		width: 150px;
+	}
+}

@@ -1,0 +1,40 @@
+/* ==========================================================================
+Custom Global Icons
+========================================================================== */
+
+// Example @font-face rule
+@include font-face("icons", font-files("icons/icons.ttf", "icons/icons.eot", "icons/icons.eot?#iefix", "icons/icons.woff", "icons/icons.svg"));
+
+.icon {
+	font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+	content: "\40";
+}
+
+.icon-twitter:before {
+	content: "\24";
+}
+
+.icon-pinterest:before {
+	content: "\23";
+}
+
+.icon-cart:before {
+	content: "\21";
+}
+
+.icon-menu-mobile:before {
+	content: "\60";
+}
