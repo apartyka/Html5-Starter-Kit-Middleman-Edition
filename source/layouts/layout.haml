@@ -45,6 +45,9 @@
 
     %header{ :id => 'global-header', :class => 'container-full clearfix' }
       =partial 'partials/global-header'
+    
+    .container-full
+      =partial 'partials/banner'
 
     .container-full
 
@@ -58,8 +61,8 @@
   :javascript
     window.jQuery || document.write('<script src="assets/js/lib/jquery.min.js"><\/script>')
 
-  /= javascript_include_tag('App.js')
-  = javascript_include_tag('StickyHeader.js')
+  -#= javascript_include_tag('App.js')
+  -#= javascript_include_tag('StickyHeader.js')
 
   :javascript
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

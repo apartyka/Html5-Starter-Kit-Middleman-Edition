@@ -4,7 +4,7 @@ set :markdown_engine, :redcarpet
 #Directory settings
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
-set :images_dir, 'assets/images'
+set :images_dir, 'assets/img'
 set :fonts_dir, 'assets/fonts'
 
 #Livereload
