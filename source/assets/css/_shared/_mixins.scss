@@ -50,7 +50,7 @@
 $viewport-increment: 0.1px; // customize to suite
 
 // Desktop
-$desktop: 1024px; // customize to suite
+$desktop: 974px; // customize to suite
 $pre-desktop: $desktop - $viewport-increment;
 
 // Tablet
@@ -58,7 +58,7 @@ $tablet: 768px; // customize to suite
 $pre-tablet: $tablet - $viewport-increment;
 
 // Palm
-$palm: 640px; // customize to suite
+$palm: 546px; // customize to suite
 $post-palm: $palm + $viewport-increment;
 
 // Constraints

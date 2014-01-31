@@ -1,13 +1,11 @@
 // Custom web fonts
 
-//@include font-face("BebasRegular", font-files("bebas___.ttf", "bebas___.eot", "bebas___.woff"));
+$webfont-active: false; //Using a custom web font like a google font or fonts.com? Set it true here to output the custom classes below.
 
-$webfont-active: true; //Using a custom font? Set it true here to output the custom classes below.
-
-$font-default: "Futura", "Trebuchet MS", Arial, sans-serif;
+$font-default: Helvetica, "Helvetica Neue", Arial, sans-serif;
 $font-default-size: 1em;
 
-$font-oswald: "Oswald"; // Available weights: Light 300, Normal 400, Bold 700
+$font-bebas-regular: 'BebasRegular';
 $font-light-weight: 300;
 $font-normal-weight: 400;
 $font-bold-weight: 700;
@@ -15,7 +13,8 @@ $font-bold-weight: 700;
 
 // h1-h5
 @mixin headings {
-	//color: $color-mustard-yellow;
+	font-family: $font-bebas-regular;
+	color: $color-black-slate;
 	//text-shadow: 1px 1px 0 #fff;
 	text-transform: uppercase;
 }
@@ -23,6 +22,8 @@ $font-bold-weight: 700;
 /* ==========================================================================
 Global Fonts
 ========================================================================== */
+
+@include font-face("BebasRegular", font-files("bebas___.ttf", "bebas___.eot", "bebas___.woff"));
 
 //@if .wf-active class is on html write these classes, @else do nothing
 @if ($webfont-active) {

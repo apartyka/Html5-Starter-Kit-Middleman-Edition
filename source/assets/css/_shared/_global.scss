@@ -28,7 +28,7 @@ html {
 
 body {
     background-color: $color-white;
-    color: rgb(102, 102, 102);
+    color: $color-black;
     font-family: $font-default;
     font-size: $font-default-size;
     font-weight: $font-normal-weight;
@@ -38,6 +38,7 @@ body {
 }
 
 img {
+    height: auto; // maybe?
     max-width: 100%;
 }
 
@@ -136,15 +137,16 @@ Containers & Holders
 
 .container-full {
     > [class^="container"] {
-        width: $max-width;
+        width: $desktop;
         
-        @media ( max-width: $max-width + $default-space * 2 ) { // Keep "fluid feel" of gutters for containers
+        @media ( max-width: $desktop + $default-space * 2 ) { // Keep "fluid feel" of gutters for containers
             margin-left: $default-space;
             margin-right: $default-space;
             width: auto;
         }
 
-        @media ( max-width: $breakpoint-phone ) {
+        //@media ( max-width: $breakpoint-phone ) {
+        @include mediaQuery($max, $palm) {
             margin-left: $default-space--smaller;
             margin-right: $default-space--smaller;
 
@@ -159,6 +161,13 @@ Containers & Holders
                     padding-left: 0;
                     padding-right: 0;
                 }
+            }
+        }
+
+        &.margin--sides--mobile {
+            @include mediaQuery($max, $palm) {
+                margin-left: 0;
+                margin-right: 0;
             }
         }
     }

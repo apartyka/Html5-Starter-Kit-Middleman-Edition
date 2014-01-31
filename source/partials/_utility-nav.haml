@@ -1,0 +1,17 @@
+.utility-nav.col-wrap.flc
+  .col-1.fl-right
+    %nav.fl-left.margin-left--2x
+      %ul.margin-left--2x
+        - utilityNav.links.each do |i|
+          %li
+            %a{ :href => i.href } #{ i.name }
+
+    %nav.cart-mini.fl-right.font-oswald       
+      %a{ :href => '#', :title => 'View Cart' }
+        %span.icon.icon-cart            
+     
+        %span.items
+          3 items
+          %span.price-total
+            %sup $
+            119.30

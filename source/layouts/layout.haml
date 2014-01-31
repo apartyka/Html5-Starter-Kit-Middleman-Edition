@@ -8,11 +8,6 @@
   %head
     %meta{:charset => 'utf-8'}/
     
-    /Mobile Viewport Fix
-    /http://j.mp/mobileviewport - http://davidbcalhoun.com/2010/viewport-metatag
-    /device-width : Occupy full width of the screen in its current orientation
-    /initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
-    /maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (/not recommended for accessibility reasons)
 
     -#Vendor specific meta
     -#=partial 'partials/vendor/meta'
@@ -23,12 +18,17 @@
     %meta{ :content => page_description, :name => 'description' }
     %meta{ :content => '', :name => 'keywords' }/
 
+    /Mobile Viewport Fix
+    /http://j.mp/mobileviewport - http://davidbcalhoun.com/2010/viewport-metatag
+    /device-width : Occupy full width of the screen in its current orientation
+    /initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+    /maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (/not recommended for accessibility reasons)
     %meta{ :content => 'true', :name => 'HandheldFriendly' }
     %meta{ :content => 'width=device-width, initial-scale=1.0, minimum-scale=1.0', :name => 'viewport' }/
     %meta{ :content => 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }/
     %meta{ :content => 'yes', :name => 'apple-mobile-web-app-capable' }/
 
-    = javascript_include_tag ('lib/modernizr-2.6.2.dev.js')
+    = javascript_include_tag ('lib/modernizr-2.7.1.dev.js')
 
     = stylesheet_link_tag 'styles.css', { :media => 'all' };
     - if data.page.pageStyles
@@ -60,7 +60,6 @@
 
   /= javascript_include_tag('App.js')
   = javascript_include_tag('StickyHeader.js')
-  = javascript_include_tag('Fonts.js')
 
   :javascript
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

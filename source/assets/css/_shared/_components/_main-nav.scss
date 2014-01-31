@@ -5,41 +5,62 @@ Global Header
 ========================================================================== */
 #global-header {
     background-color: $color-white;
-    height: 84px;
+    border-bottom: 11px solid $color-mustard-yellow;
+    // height: 84px; // need for sticky header
     position: relative;
 }
 
-
 // dunno if we need this yet
-#global-header.fixed {
-    width: 100%;
-}
+// #global-header.fixed {
+//     width: 100%;
+// }
 
 #logo {
-    height: 38px;
+    //height: 38px;
+    @include mediaQuery($max, $palm) {
+        float: none;
+        text-align: center;
+    }
 }
 
 /* ==========================================================================
 Main Nav
 ========================================================================== */
 #main-nav {
-    background-color: #000;
-    clear: both;
-    transform: translateZ(0px);
+    //transform: translateZ(0px); //need for sticky header
+    margin-top: $default-space--2x + 10;
+
+    @include mediaQuery($max, $palm) {
+        background-color: $color-mustard-yellow;
+        float: none;
+        margin-top: $default-space--smallest;
+        text-align: center;
+    }
+
+    ul {
+        @include mediaQuery($max, $palm) {
+            padding-top: $default-space--half;
+        }
+    }
 
     li {
         vertical-align: middle;
     }
     
     a {
-        color: $color-white;
-        font-size: (14em/16);
+        color: $color-black;
+        font-family: $font-bebas-regular;
+        font-size: (24em/16);
         padding: $default-space--smallest;
         text-transform: uppercase;
 
         &:hover {
-          color: $color-mustard-yellow;
+          color: $color-ketchup-red;
           text-decoration: none;
+
+            @include mediaQuery($max, $palm) {
+                color: $color-goldenbun-brown;
+            }
         }
     }
 }

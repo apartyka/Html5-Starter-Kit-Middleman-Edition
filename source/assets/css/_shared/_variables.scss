@@ -1,7 +1,7 @@
 // ==========================================================================
 // Global Widths
 // ==========================================================================
-$max-width: 1200px;
+$max-width: 974px;
 
 
 // ==========================================================================
@@ -62,9 +62,12 @@ $include-breakpoint: true; // Compile the media-query at `$default-space__breakp
 // ==========================================================================
 // Global Colors
 // ==========================================================================
-$color-amber-red: rgb(194, 79,25);
-$color-mustard-yellow: rgb(255, 190, 0);
-$color-deep-blue: #0c3653;
+$color-ketchup-red: rgb(212, 107, 85);
+$color-mustard-yellow: rgb(255, 255, 1);
+$color-mustard-brown: rgb(111,111,16);
+$color-goldenbun-brown: rgb(241, 160, 87);
+
 $color-white: rgb(255, 255, 255);
+$color-black-slate: rgb(46, 46, 46);
 $color-black: rgb(0, 0, 0);
-$color-gray: #666;
+$color-gray: rgb(239, 239, 239);

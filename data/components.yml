@@ -2,23 +2,14 @@
 mainNav:
   links:
     -
-      name: "New Arrivals"
-      href: "#new-arrivals"
+      name: "Menu"
+      href: "#menu"
     -
-      name: "Top Looks"
-      href: "#top-looks"
+      name: "About Us"
+      href: "#about-us"
     -
-      name: "Apparel"
-      href: "#apparel"
-    -
-      name: "Jewelry & Accessories"
-      href: "#Jewelry & Accessories"
-    -
-      name: "Online Exclusives"
-      href: "#Online Exclusives"
-    -
-      name: "Sale"
-      href: "#sale"
+      name: "Contact"
+      href: "#contact"
 
 utilityNav:
   links:

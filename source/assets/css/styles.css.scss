@@ -1,4 +1,5 @@
 // This is used for output of all CSS.
+// You are looking at individual css files in the order they are rendered
 // CSS selectors should not be added here.
 
 // Change compass settings in config.rb
@@ -7,5 +8,7 @@
 // Normalize
 // @import "_vendor/normalize-full"; // http://necolas.github.com/normalize.css/ This is not required, it uses the full normalize file
 @import "_vendor/normalize"; // This is not required but it's a custom version of normalize-full.scss, it's bare bones.
+
 @import "_shared/global"; // Global Classes/Styles
+
 @import "_shared/_components/components-master"; // Component/Module Specific Styling

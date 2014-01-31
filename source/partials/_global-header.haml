@@ -1,27 +1,10 @@
 :ruby
   utilityNav = data.components.utilityNav
 
-.container
+.container.clearfix.margin--sides--mobile
+  
   #logo.fl-left
     %a{ :href => '#', :title => 'The Company' }
-      =image_tag 'http://placekitten.com/g/170/38', :alt => 'Logo', :width => '170', :height => '38'
-  
-  .col-wrap.flc
-    .col-1.fl-right
-      %nav.utility-nav.fl-left.margin-left--2x
-        %ul.margin-left--2x
-          - utilityNav.links.each do |i|
-            %li
-              %a{ :href => i.href } #{ i.name }
-  
-      %nav.cart-mini.fl-right.font-oswald       
-        %a{ :href => '#', :title => 'View Cart' }
-          %span.icon.icon-cart            
-       
-          %span.items
-            3 items
-            %span.price-total
-              %sup $
-              119.30
+      =image_tag 'assets/img/logo/logo.jpg', :alt => 'Dirty Franks', :width => '193', :height => '107'
 
   =partial 'partials/main-nav'
