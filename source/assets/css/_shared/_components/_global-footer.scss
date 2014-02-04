@@ -2,7 +2,7 @@
 Global Footer
 ========================================================================== */
 #global-footer {
-    background-color: $color-black;
+    background-color: $color-light-gray;
     text-transform: uppercase;
 
     h5 {
@@ -12,6 +12,7 @@ Global Footer
     }
 
     a {
+        color: $color-medium-gray;
         font-size: (11em/16);
 
         &:hover {
