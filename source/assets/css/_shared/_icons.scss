@@ -1,12 +1,12 @@
 /* ==========================================================================
-Custom Global Icons
+Custom Global DirtyFranks-fonts
 ========================================================================== */
 
 // Example @font-face rule
-@include font-face("icons", font-files("icons/icons.ttf", "icons/icons.eot", "icons/icons.eot?#iefix", "icons/icons.woff", "icons/icons.svg"));
+@include font-face("DirtyFranks-fonts", font-files("icons/DirtyFranks-fonts.ttf", "icons/DirtyFranks-fonts.eot", "icons/DirtyFranks-fonts.eot?#iefix", "icons/DirtyFranks-fonts.woff", "icons/DirtyFranks-fonts.svg"));
 
 .icon {
-	font-family: 'icons';
+	font-family: 'DirtyFranks-fonts';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -19,22 +19,18 @@ Custom Global Icons
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-facebook:before {
-	content: "\40";
+.icon-font-menu-mobile:before {
+	content: "\7e";
 }
-
-.icon-twitter:before {
-	content: "\24";
-}
-
-.icon-pinterest:before {
-	content: "\23";
-}
-
-.icon-cart:before {
+.icon-font-cart:before {
 	content: "\21";
 }
-
-.icon-menu-mobile:before {
-	content: "\60";
+.icon-font-facebook:before {
+	content: "\40";
+}
+.icon-font-instagram:before {
+	content: "\23";
+}
+.icon-font-twitter:before {
+	content: "\24";
 }
