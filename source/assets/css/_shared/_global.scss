@@ -198,17 +198,26 @@ Content component
 /* ==========================================================================
 Scaling bg image
 ========================================================================== */
-figure.fluidratio {
-    padding-top: 37%;  /* slope */
-  //height: 477px;  /* start height */
-    @include background(image-url("homepage-carousel/banner-1.jpg"));
+.fluidratio {
+    @include background(image-url("banners/banner-1.jpg"));
   //background-image: url(assets/img/homepage-carousel/banner-1.jpg);
     background-repeat: repeat-x;
-    background-size: cover;
-    -moz-background-size: cover;  /* Firefox 3.6 */
-    background-position: left;  /* Internet Explorer 7/8 */
+    background-size: 100%;
+    -moz-background-size: 100%;  /* Firefox 3.6 */
+    background-position: 50% 50%;  /* Internet Explorer 7/8 */
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
     margin: 0;
-    max-height: 83px;
+    vertical-align: middle;
+    width: 100%;
+
+    .inner {
+        display: block;
+        height: 0;
+        padding-top: percentage(477/1280);
+        //padding-top: 37.265625%;
+    }
 }
 
 /* ==========================================================================
