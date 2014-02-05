@@ -1,0 +1,15 @@
+// slider is @imported into components=master.scss
+
+/* ==========================================================================
+Slider widget
+========================================================================== */
+.slider {
+	.block-text {
+		font-family: $font-default;
+		text-transform: inherit;
+	}
+
+	nav {
+		border: 1px solid red;
+	}
+}

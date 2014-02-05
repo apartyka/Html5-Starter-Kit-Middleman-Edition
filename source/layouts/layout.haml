@@ -6,8 +6,7 @@
 %html
   / <![endif]
   %head
-    %meta{:charset => 'utf-8'}/
-    
+    %meta{:charset => 'utf-8'}/    
 
     -#Vendor specific meta
     -#=partial 'partials/vendor/meta'
@@ -38,10 +37,11 @@
     /[if lt IE 9] 
       = javascript_include_tag ('lib/html5shiv.js')
 
-  %body{ :id => 'application' }
+  %body{ :id => 'app' }
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
   
-  #wrapper
+  /Class namespace for the page
+  #wrapper.home
 
     %header{ :id => 'global-header', :class => 'container-full clearfix' }
       =partial 'partials/global-header'
@@ -53,6 +53,7 @@
         =partial 'partials/social-list'
 
       .container.slider
+        =partial 'partials/slider'
 
       %section.container{ :id => 'main' }
         = yield
