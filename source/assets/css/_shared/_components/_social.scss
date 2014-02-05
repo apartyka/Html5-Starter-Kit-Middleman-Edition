@@ -1,5 +1,12 @@
 .social {
     a {
         font-size: $font-default-size;
+
+        &:hover {
+        	background-color: $color-plum-blue;
+			color: $color-white;
+			padding: $default-space--smallest;
+			text-decoration: none;
+        }
     }
 }

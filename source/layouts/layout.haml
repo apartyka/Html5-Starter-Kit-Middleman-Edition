@@ -49,10 +49,10 @@
     .container-full
       =partial 'partials/banner'
 
-      .container.social.margin-top
+      .container.social.padding--verticals.clearfix
         =partial 'partials/social-list'
 
-    .container-full
+      .container.slider
 
       %section.container{ :id => 'main' }
         = yield
