@@ -1,12 +1,13 @@
 // slider is @imported into components=master.scss
 
-$slider-nav-icon: rgb(234,234,234);
-$slider-nav-icon-active: rgb(212,107,85);
-$slider-nav-icon-active-border: rgb(202,102,81);
-$slider-nav-icon-border: rgb(222,222,222);
 /* ==========================================================================
 Slider widget
 ========================================================================== */
+$slider-nav-icon: rgb(234,234,234);
+$slider-nav-icon-active: rgb(212,107,85);
+$slider-nav-icon-active-border: 1px solid rgb(202,102,81);
+$slider-nav-icon-border: 1px solid rgb(222,222,222);
+
 .slider {
 	.text {
 		font-family: $font-default;
@@ -23,7 +24,7 @@ Slider widget
 		a {
 			@include border-radius(8px);
 			background-color: $slider-nav-icon;
-			border: 1px solid $slider-nav-icon-border;
+			border: $slider-nav-icon-border;
 			display: inline-block;
 			height: 15px;
 			margin-right: $default-space--half;
@@ -34,7 +35,7 @@ Slider widget
 			&:hover, 
 			&.active {
 				background-color: $slider-nav-icon-active;
-				border: 1px solid $slider-nav-icon-active-border;
+				border: $slider-nav-icon-active-border;
 			}
 		}
 	}

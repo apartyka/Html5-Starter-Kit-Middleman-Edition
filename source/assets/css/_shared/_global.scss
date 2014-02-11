@@ -191,6 +191,8 @@ Clearing
 /* ==========================================================================
 Content component
 ========================================================================== */
+$content-card-border: 1px solid rgb(221,221,21);
+
 .content {
     p {
         margin-bottom: $default-space--half;
@@ -198,8 +200,20 @@ Content component
     }
 
     .entry {
-        margin-bottom: $default-space--2x;
+        margin-bottom: $default-space;
         margin-top: $default-space;
+    }
+
+    &.card {
+        border: $content-card-border;
+        @include border-radius(3px);
+        text-align: center;
+
+        h4 {
+            @include mediaQuery($max, $palm) {
+                font-size: (30em/16) / 2;      // TODO: make global headings variables      
+            }
+        }
     }
 }
 

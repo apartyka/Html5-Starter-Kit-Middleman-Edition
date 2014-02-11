@@ -49,7 +49,7 @@
     .container-full
       =partial 'partials/banner'
 
-      .container.social.padding--verticals.clearfix
+      .container.social.clearfix
         =partial 'partials/social-list'
 
       .container.slider
@@ -58,7 +58,7 @@
       %section.container{ :id => 'main' }
         = yield
 
-    %footer{ :id => 'global-footer', :class => 'container-full' }
+    %footer{ :id => 'global-footer', :class => 'container-full margin-top--2x' }
       =partial 'partials/global-footer.haml'
 
   %script{ :src => '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' }/
