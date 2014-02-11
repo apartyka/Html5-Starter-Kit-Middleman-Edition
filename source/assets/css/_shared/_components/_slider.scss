@@ -1,15 +1,41 @@
 // slider is @imported into components=master.scss
 
+$slider-nav-icon: rgb(234,234,234);
+$slider-nav-icon-active: rgb(212,107,85);
+$slider-nav-icon-active-border: rgb(202,102,81);
+$slider-nav-icon-border: rgb(222,222,222);
 /* ==========================================================================
 Slider widget
 ========================================================================== */
 .slider {
-	.block-text {
+	.text {
 		font-family: $font-default;
 		text-transform: inherit;
+
+		@include mediaQuery($max, $palm) {
+        	font-size: (41em/16) / 2;      // TODO: make global headings variables  	
+    	}
 	}
 
 	nav {
-		border: 1px solid red;
+		text-align: center;
+
+		a {
+			@include border-radius(8px);
+			background-color: $slider-nav-icon;
+			border: 1px solid $slider-nav-icon-border;
+			display: inline-block;
+			height: 15px;
+			margin-right: $default-space--half;
+			text-decoration: none;
+			vertical-align: middle;
+			width: 15px;
+
+			&:hover, 
+			&.active {
+				background-color: $slider-nav-icon-active;
+				border: 1px solid $slider-nav-icon-active-border;
+			}
+		}
 	}
 }
