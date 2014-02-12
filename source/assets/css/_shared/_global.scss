@@ -191,7 +191,7 @@ Clearing
 /* ==========================================================================
 Content component
 ========================================================================== */
-$content-card-border: 1px solid rgb(221,221,21);
+$content-card-border: 2px solid rgb(221,221,21);
 
 .content {
     p {
@@ -207,15 +207,27 @@ $content-card-border: 1px solid rgb(221,221,21);
     &.card {
         border: $content-card-border;
         @include border-radius(3px);
-        height: 275px; //blech
+        height: 400px; //blech
         padding-left: $default-space;
         padding-right: $default-space;
         text-align: center;
+
+        .entry {
+            margin-top: $default-space--2x;
+            position: relative;
+            padding-top: 125px;
+        }
 
         h4 {
             @include mediaQuery($max, $palm) {
                 font-size: (30em/16) / 2;      // TODO: make global headings variables      
             }
+        }
+
+        .badge {
+            position: absolute;
+            top: 0;
+            width: 100%; 
         }
 
         .text {

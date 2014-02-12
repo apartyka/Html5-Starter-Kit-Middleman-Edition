@@ -8,8 +8,10 @@ description: "Best hot dogs in town, ya dig?"
 .col-wrap.flc.padding--verticals--2x
   
   .col.col-3
-    .content.card.margin-right--half
+    .content.card.margin-right
       .entry
+        .badge
+          =image_tag 'assets/img/badges/call-us.png', :alt => 'Call Us', :width => '97', :height => '97'
         %h4 Call Us
         %p.text
           Have any questions; trouble finding us; or just want to shoot the shit?
@@ -19,6 +21,8 @@ description: "Best hot dogs in town, ya dig?"
   .col.col-3
     .content.card.margin-right--half
       .entry
+        .badge
+          =image_tag 'assets/img/badges/hours.png', :alt => 'Hours', :width => '97', :height => '97'
         %h4 Our Hours
         %p.text
           11AM - 2:30AM
@@ -32,8 +36,10 @@ description: "Best hot dogs in town, ya dig?"
           Carryout 'Till 1:45AM
   
   .col.col-3
-    .content.card
+    .content.card.margin-left--half
       .entry
+        .badge
+          =image_tag 'assets/img/badges/address.png', :alt => 'Address', :width => '96', :height => '111'
         %h4 Our Location
         %p.text
           248 S. 4th Street
