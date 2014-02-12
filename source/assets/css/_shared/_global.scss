@@ -207,12 +207,29 @@ $content-card-border: 1px solid rgb(221,221,21);
     &.card {
         border: $content-card-border;
         @include border-radius(3px);
+        height: 275px; //blech
+        padding-left: $default-space;
+        padding-right: $default-space;
         text-align: center;
 
         h4 {
             @include mediaQuery($max, $palm) {
                 font-size: (30em/16) / 2;      // TODO: make global headings variables      
             }
+        }
+
+        .text {
+            color: $color-black-slate;
+            font-size: (15em/16);
+            padding-bottom: $default-space;
+            padding-top: $default-space;
+        }
+
+        .cta {
+            font-size: (22em/16);
+            font-weight: $font-light-weight;
+            padding-bottom: $default-space;
+            padding-top: $default-space;
         }
     }
 }
