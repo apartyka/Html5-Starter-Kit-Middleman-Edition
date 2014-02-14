@@ -3,7 +3,8 @@ Global Footer
 ========================================================================== */
 #global-footer {
     background-color: $color-light-gray;
-    text-transform: uppercase;
+    border-top: 2px solid rgb(233,233,233);
+    color: $color-medium-gray;
 
     h5 {
     	color: $color-white;
@@ -12,16 +13,25 @@ Global Footer
     }
 
     a {
-        color: $color-medium-gray;
-        font-size: (11em/16);
-
+        color: $color-medium-gray;            
         &:hover {
-          color: $color-mustard-yellow;
+          color: $color-ketchup-red;
           text-decoration: none;
         }
     }
 
-    p {
-        font-size: (11em/16);
+    p,
+    .utility {
+        font-size: (12em/16);
     }    
+
+    p, ul {
+        @include mediaQuery($max, $pre-tablet) {
+            display: block;
+        }
+    }
+
+    .icon {
+        font-size: (16em/16);
+    }
 }
