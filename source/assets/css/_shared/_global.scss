@@ -172,7 +172,8 @@ Containers & Holders
             }
         }
 
-        .margin--sides--mobile {
+        .margin--sides--mobile,
+        &.margin--sides--mobile {
             @include mediaQuery($max, $pre-tablet) {
                 margin-left: 0;
                 margin-right: 0;
