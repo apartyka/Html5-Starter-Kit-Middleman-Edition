@@ -15,11 +15,11 @@ description: "Best hot dogs in town, ya dig?"
         %h4.text Call Us
         %p.text
           Have any questions; trouble finding us; or just want to shoot the shit?
-        %p.cta
+        %span.cta
           614.824.4673
 
   .col.col-3.go-full-mobile.margin-bottom
-    .content.card.margin-right--half.margin--sides--mobile
+    .content.card.margin-right.margin--sides--mobile
       .entry
         .badge
           =image_tag 'assets/img/badges/hours.png', :alt => 'Hours', :width => '97', :height => '97'
@@ -36,7 +36,7 @@ description: "Best hot dogs in town, ya dig?"
           Carryout 'Till 1:45AM
   
   .col.col-3.go-full-mobile.margin-bottom
-    .content.card.margin-left--half.margin--sides--mobile
+    .content.card
       .entry
         .badge
           =image_tag 'assets/img/badges/address.png', :alt => 'Address', :width => '96', :height => '111'
@@ -44,4 +44,9 @@ description: "Best hot dogs in town, ya dig?"
         %p.text
           248 S. 4th Street
           %br
-          Columbus, Ohio 43215
+          Columbus, Ohio 43215    
+      .cta.block
+        .margin-left
+          %a{ :href => '#', :title => 'Get Directions' }
+            Get Directions
+            =image_tag 'assets/img/arrow-right.png', :alt => '', :width => '11', :height => '25', :class => 'fl-right margin-right'         
