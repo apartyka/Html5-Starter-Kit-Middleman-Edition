@@ -223,6 +223,7 @@ $content-card-border: 3px solid rgb(221,221,21);
 
         @include mediaQuery($max, $pre-tablet) {
             height: inherit;
+            min-height: 140px;
         }
 
         .entry {
@@ -232,22 +233,26 @@ $content-card-border: 3px solid rgb(221,221,21);
 
             @include mediaQuery($max, $pre-tablet) {
                 clear: both;
+                margin-top: $default-space;
                 padding-top: 0;
-                overflow: hidden;
+                //overflow: hidden;
                 text-align: center;
                 //padding-left: 175px;
             }
 
             @include mediaQuery($max, $palm) {
+                margin-bottom: 0;
+                margin-top: $default-space;
+                //overflow: visible;
                 text-align: right;
             }
         }
 
-        // h4 {
-        //     @include mediaQuery($max, $palm) {
-        //         font-size: (30em/16) / 2;      // TODO: make global headings variables      
-        //     }
-        // }
+        h4 {
+            @include mediaQuery($max, $palm) {
+                font-size: (30em/16) / 2;      // TODO: make global headings variables      
+            }
+        }
 
         .badge {
             position: absolute;
