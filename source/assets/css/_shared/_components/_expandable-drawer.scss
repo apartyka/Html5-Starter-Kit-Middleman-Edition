@@ -1,0 +1,20 @@
+// Expandable Drawer is @imported into components-master.scss
+
+/* ==========================================================================
+Expandable drawer component
+========================================================================== */
+.expandable-drawer {
+	border-top: 1px solid $color-black;
+	position: relative;
+	// change later to inherit from .content
+	&.content {
+		display: none;
+	}
+	// change later to inherit from .icon
+	.expandable-drawer-icon {
+		height: 16px;
+		position: absolute;
+		top: -16px;
+		width: 19px;
+	}
+}

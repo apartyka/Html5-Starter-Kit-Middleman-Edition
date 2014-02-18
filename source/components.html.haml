@@ -1,0 +1,21 @@
+---
+title: "Site Components"
+description: "The Page Description"
+-#pageStyles:
+---
+
+%h1
+  Site Components
+
+.col-wrap.flc.padding--verticals
+
+  .col.col-3.full-width-mobile
+    %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' }  } sdsd
+  .col.col-3.full-width-mobile
+    %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' }  } sds dddd
+  .col.col-3.full-width-mobile
+    %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' } } assqsqsqss
+
+.container.expandable-drawer.content.padding--verticals
+  =image_tag 'components/expandable-drawer-icon.gif', :alt => 'carat', :width => '170', :height => '38', :class => 'expandable-drawer-icon'
+  content
