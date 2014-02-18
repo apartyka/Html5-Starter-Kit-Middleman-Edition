@@ -7,7 +7,7 @@ description: "The Page Description"
 %h1
   Site Components
 
-.col-wrap.flc.padding--verticals
+.col-wrap.flc.padding--verticals.scroll-target
 
   .col.col-3.full-width-mobile
     %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' }  } sdsd
@@ -16,6 +16,7 @@ description: "The Page Description"
   .col.col-3.full-width-mobile
     %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' } } assqsqsqss
 
-.container.expandable-drawer.content.padding--verticals
-  =image_tag 'components/expandable-drawer-icon.gif', :alt => 'carat', :width => '170', :height => '38', :class => 'expandable-drawer-icon'
-  content
+.expandable-drawer
+  .container.content.padding--verticals
+    =image_tag 'components/expandable-drawer-icon.gif', :alt => 'carat', :width => '170', :height => '38', :class => 'expandable-drawer-icon'
+    content

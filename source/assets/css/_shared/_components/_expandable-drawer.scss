@@ -4,17 +4,18 @@
 Expandable drawer component
 ========================================================================== */
 .expandable-drawer {
-	border-top: 1px solid $color-black;
 	position: relative;
-	// change later to inherit from .content
-	&.content {
+
+	.content {
+		@extend .content;
+		border-top: 1px solid $color-black;
 		display: none;
 	}
 	// change later to inherit from .icon
 	.expandable-drawer-icon {
 		height: 16px;
 		position: absolute;
-		top: -16px;
+		top: -15px;
 		width: 19px;
 	}
 }
