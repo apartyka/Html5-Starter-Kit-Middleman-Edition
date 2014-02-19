@@ -7,23 +7,89 @@ description: "The Page Description"
 %h1
   Site Components
 
-%h2
-  Expandable Drawer
+.padding-bottom--2x
+  %h2
+    Expandable Drawer
 
-.content
-  %p
-    Click a button to display a drawer's contents. The icon (or carat) moves to the location of the button that was clicked.
-    
-.col-wrap.flc.padding--verticals.scroll-target
+  .content
+    %p
+      Click a button to display a drawer's contents. The icon (or carat) moves to the location of the button that was clicked.
 
-  .col.col-3.full-width-mobile
-    %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' }  } sdsd
-  .col.col-3.full-width-mobile
-    %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' }  } sds dddd
-  .col.col-3.full-width-mobile
-    %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' } } assqsqsqss
+  .col-wrap.flc.padding--verticals.scroll-target
 
-.expandable-drawer
-  .container.content.padding--verticals
-    =image_tag 'components/expandable-drawer-icon.gif', :alt => 'carat', :width => '170', :height => '38', :class => 'expandable-drawer-icon'
-    content
+    .col.col-3.full-width-mobile
+      %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' }  } sdsd
+    .col.col-3.full-width-mobile
+      %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' }  } sds dddd
+    .col.col-3.full-width-mobile
+      %button{ :class => 'button button-primary margin-bottom--half expandable-drawer-trigger', :data => { :callBack => 'drawerCallback' } } assqsqsqss
+
+  .expandable-drawer
+    .container.content.padding--verticals
+      =image_tag 'components/expandable-drawer-icon.gif', :alt => 'carat', :width => '170', :height => '38', :class => 'expandable-drawer-icon'
+      content
+
+.padding-bottom--2x
+  %h2
+    Sorting Hat
+
+  .content
+    %p
+      Select from the left and right column to sort an outfit.
+
+  .sorting-hat.col-wrap.flc.padding--verticals
+    .col.col-5-2
+      .selection
+        %h4 Jacket
+        .product-row.col-wrap.flc.padding--verticals
+          .product.col.col-3
+            product bam
+          .product.col.col-3
+            product bar
+          .product.col.col-3
+            product biz
+        .product-row.col-wrap.flc.padding--verticals
+          .product.col.col-3
+            product bam
+          .product.col.col-3
+            product bar
+          .product.col.col-3
+            product biz
+        .product-row.col-wrap.flc.padding--verticals
+          .product.col.col-3
+            product bam
+          .product.col.col-3
+            product bar
+          .product.col.col-3
+            product biz
+    .col.col-5
+      #result
+        %h4 Suit Result
+        .product.selection-result.padding--verticals
+          Jacket Result
+        .product.selection-result.padding--verticals
+          Pant Result
+    .col.col-5-2
+      .selection.right-side
+        %h4 Pants
+        .product-row.col-wrap.flc.padding--verticals
+          .product.col.col-3
+            product bam
+          .product.col.col-3
+            product bar
+          .product.col.col-3
+            product biz
+        .product-row.col-wrap.flc.padding--verticals
+          .product.col.col-3
+            product bam
+          .product.col.col-3
+            product bar
+          .product.col.col-3
+            product biz
+        .product-row.col-wrap.flc.padding--verticals
+          .product.col.col-3
+            product bam
+          .product.col.col-3
+            product bar
+          .product.col.col-3
+            product biz
