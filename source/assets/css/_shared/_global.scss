@@ -175,6 +175,8 @@ Clearing
 Content component
 ========================================================================== */
 .content {
+    position: relative;
+    
     p {
         margin-bottom: $default-space--half;
         margin-top: $default-space--half;
