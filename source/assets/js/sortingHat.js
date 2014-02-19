@@ -1,6 +1,32 @@
+/* --------------------------------------------------------------------------
+|   -- Global App namespace --
+-------------------------------------------------------------------------- */
+var App = window.App || {};
+
+App.objects = {};
+
+App.modules = {};
+
+console.log("App namespace: ", App);
+
+
+/* --------------------------------------------------------------------------
+|   -- Initializer --
+-------------------------------------------------------------------------- */
+$(window).on('load.App', function() {
+
+    $(window).trigger('App.modules');
+    $(window).trigger('App.ready');
+
+});
+
+
 (function( $, window, document ) {
 
-	window.sorting_hat = function (selector) {
+	'use strict';
+
+	App.modules.sorting_hat = function (selector) {
+		
 		var SortingHat = function (element) {
 
 			this.sortingHat = $(element);
@@ -9,44 +35,43 @@
 
 		        var obj = this;
 
-		        //obj.closeEvents();
-		        //obj.drawerEvents();
+		        //obj.otherEvents(); //init other methods	        
 
-		        // store data
+		        // store some data
 		        obj.sortingHat.data({
 		            instantiated: true,
 		            instance: index
 		        });
-				console.log("sortingHat init");
+				console.log("sortingHat private init");
 		    };
 
-		    return {
-		    	init: function () {
-
-	                console.log("sortingHat public init");
-	                // instantiate
-	                $('.sorting-hat', document).each(function (i, element) {
-
-	                    // init objects
-	                    //if (i === 0) { experience.objects.expandable_drawer = []; }
-
-	                    // create objects
-	                    // experience.objects.expandable_drawer[i] = new ExpandableDrawer(el);
-	                    // experience.objects.expandable_drawer[i].init(i);
-
-	                    sorting_hat[i] = new SortingHat(element);
-	                    sorting_hat[i].init(i);
-
-	                });
-
-	            }
-		    };
 
 		};
-	};
 
-	$(document).ready(function(){
-		sorting_hat.init();
-	});
+	    return {
+	    	init: function () {
 
-}( jQuery, window, document ));
+                console.log("sortingHat public init");
+                
+                // instantiate
+                $('.sorting-hat', document).each(function (i, el) {
+
+                    // init objects
+                     if (i === 0) { App.objects.sorting_hat = []; }
+
+                    App.objects.sorting_hat[i] = new SortingHat(el);
+                    App.objects.sorting_hat[i].init(i);
+
+                });
+
+            }
+	    };
+
+	};	
+
+	$(window).on('App.modules', function () {
+        App.modules.sorting_hat().init();
+        console.log('hello');
+    });
+
+}( jQuery, window, document, undefined ));
