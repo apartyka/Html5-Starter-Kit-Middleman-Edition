@@ -1,26 +1,3 @@
-/* --------------------------------------------------------------------------
-|   -- Global App namespace --
--------------------------------------------------------------------------- */
-var App = window.App || {};
-
-App.objects = {};
-
-App.modules = {};
-
-console.log("App namespace: ", App);
-
-
-/* --------------------------------------------------------------------------
-|   -- Initializer --
--------------------------------------------------------------------------- */
-$(window).on('load.App', function() {
-
-    $(window).trigger('App.modules');
-    $(window).trigger('App.ready');
-
-});
-
-
 (function( $, window, document ) {
 
 	'use strict';
@@ -69,9 +46,10 @@ $(window).on('load.App', function() {
 
 	};	
 
+	/* Initialize module when App is ready
+    -------------------------------------------------------------------------- */
 	$(window).on('App.modules', function () {
         App.modules.sorting_hat().init();
-        console.log('hello');
     });
 
 }( jQuery, window, document, undefined ));
