@@ -40,46 +40,44 @@ description: "The Page Description"
   .sorting-hat.col-wrap.flc.padding--verticals
     .left-selection.tops.col.col-5-2
       %h4 Tops That Suit You
-      .product-row.col-wrap.flc
-        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'woot-1' } }
-          product bam
-        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'woot-2' } }
+      .swatches.col-wrap.flc
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :leftSide => 'bar' } }
+          First product left side
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :leftSide => 'bar' } }
           product bar
-        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'woot-3' } }
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :leftSide => 'bar' } }
           product bam
-        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'woot-4' } }
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :leftSide => 'bar' } }
           product bar
-        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'woot-5' } }
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :leftSide => 'bar' } }
           product bam
-        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'woot-6' } }
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :leftSide => 'bar' } }
           product bar
 
-    .col.col-5
-      #tops-selection.product.padding--verticals.margin-bottom--2x
+    .selection-container.col.col-5.align-center
+      #tops.padding--verticals
         Tops Selection
-      #bottoms-selection.product.padding--verticals
+      #bottoms.padding--verticals
         Bottoms Selection
 
     .right-selection.bottoms.col.col-5-2.align-right      
       %h4 Bottoms That Suit You
-      .product-row.col-wrap.flc.padding--verticals
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
-          product bam
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+      .swatches.col-wrap.flc.padding--verticals
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
+          First product right side
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
           product bar
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
           product biz
-      .product-row.col-wrap.flc.padding--verticals
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
           product bam
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
           product bar
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
           product biz
-      .product-row.col-wrap.flc.padding--verticals
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
           product bam
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
           product bar
-        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+        %a{ :class => 'product col col-3 margin--verticals', :data => { :rightSide => 'bar' } }
           product biz

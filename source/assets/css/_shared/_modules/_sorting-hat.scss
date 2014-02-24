@@ -3,10 +3,6 @@
 .sorting-hat {
 	position: relative;
 
-	.result {
-		text-align: center;
-	}
-
 	.col {
 		outline: 1px solid green;
 	}
@@ -14,5 +10,18 @@
 	.product {
 		cursor: pointer;
 		text-align: center;
+
+		&.selected,
+		&:hover {
+			outline: 1px solid red;
+		}
+	}
+
+	.selection-container {
+		/* Override column styles */
+		.product {
+			float: none;
+			width: auto;
+		}
 	}
 }
