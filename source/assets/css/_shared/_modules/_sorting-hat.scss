@@ -1,19 +1,18 @@
 // Sorting hat is @imported into modules-master.scss
 
 .sorting-hat {
+	position: relative;
+
+	.result {
+		text-align: center;
+	}
+
 	.col {
 		outline: 1px solid green;
 	}
 
-	#result {
+	.product {
+		cursor: pointer;
 		text-align: center;
-	}
-
-	.selection {
-		
-	}
-
-	.right-side {
-		text-align: right;
 	}
 }

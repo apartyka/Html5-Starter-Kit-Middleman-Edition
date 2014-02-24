@@ -4,22 +4,47 @@
 
 	App.modules.sorting_hat = function (selector) {
 		
-		var SortingHat = function (element) {
+		var SortingHat = function (el) {
 
-			this.sortingHat = $(element);
+			this.$sortingHat = $(el),
+			this.$leftSelection = $(el).find('.left-selection'),
+			this.$rightSelection = $(el).find('.right-selection'),
+			this.$topsSelection = $(el).find('#tops-selection'),
+			this.$bottomsSelection = $(el).find('#bottoms-selection');
+
+			console.log(this.$leftSelection);
+			console.log(this.$rightSelection);
+			console.log(this.$topsSelection);
+			console.log(this.$bottomsSelection);
+
+			this.leftProducts = function () {
+				
+				var obj = this,
+					$products = obj.$leftSelection.find('.product');
+				
+				// Returns the index of each product clicked
+				$products.on('click', function(){
+					var index = $(this).index();
+					console.log('index #: ', index);
+				});
+
+			}
 
 			this.init = function (index) {
 
 		        var obj = this;
 
 		        //obj.otherEvents(); //init other methods	        
+		        obj.leftProducts();
+
 
 		        // store some data
-		        obj.sortingHat.data({
+		        obj.$sortingHat.data({
 		            instantiated: true,
 		            instance: index
 		        });
-				console.log("sortingHat private init");
+				console.log("SortingHat private init");
+				console.log('obj.$sortingHat.data', obj.$sortingHat.data());
 		    };
 
 

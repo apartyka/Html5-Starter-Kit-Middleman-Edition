@@ -38,58 +38,48 @@ description: "The Page Description"
       Select from the left and right column to sort an outfit.
 
   .sorting-hat.col-wrap.flc.padding--verticals
-    .col.col-5-2
-      .selection
-        %h4 Jacket
-        .product-row.col-wrap.flc.padding--verticals
-          .product.col.col-3
-            product bam
-          .product.col.col-3
-            product bar
-          .product.col.col-3
-            product biz
-        .product-row.col-wrap.flc.padding--verticals
-          .product.col.col-3
-            product bam
-          .product.col.col-3
-            product bar
-          .product.col.col-3
-            product biz
-        .product-row.col-wrap.flc.padding--verticals
-          .product.col.col-3
-            product bam
-          .product.col.col-3
-            product bar
-          .product.col.col-3
-            product biz
+    .left-selection.tops.col.col-5-2
+      %h4 Tops That Suit You
+      .product-row.col-wrap.flc
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bam
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bar
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bam
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bar
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bam
+        %a{ :class => 'product col col-2 margin--verticals', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bar
+
     .col.col-5
-      #result
-        %h4 Suit Result
-        .product.selection-result.padding--verticals
-          Jacket Result
-        .product.selection-result.padding--verticals
-          Pant Result
-    .col.col-5-2
-      .selection.right-side
-        %h4 Pants
-        .product-row.col-wrap.flc.padding--verticals
-          .product.col.col-3
-            product bam
-          .product.col.col-3
-            product bar
-          .product.col.col-3
-            product biz
-        .product-row.col-wrap.flc.padding--verticals
-          .product.col.col-3
-            product bam
-          .product.col.col-3
-            product bar
-          .product.col.col-3
-            product biz
-        .product-row.col-wrap.flc.padding--verticals
-          .product.col.col-3
-            product bam
-          .product.col.col-3
-            product bar
-          .product.col.col-3
-            product biz
+      #tops-selection.product.padding--verticals.margin-bottom--2x
+        Tops Selection
+      #bottoms-selection.product.padding--verticals
+        Bottoms Selection
+
+    .right-selection.bottoms.col.col-5-2.align-right      
+      %h4 Bottoms That Suit You
+      .product-row.col-wrap.flc.padding--verticals
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bam
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bar
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product biz
+      .product-row.col-wrap.flc.padding--verticals
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bam
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bar
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product biz
+      .product-row.col-wrap.flc.padding--verticals
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bam
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product bar
+        %a{ :class => 'product col col-3', :data => { :foo => 'bar', :baz => 'qux' } }
+          product biz
