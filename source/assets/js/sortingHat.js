@@ -22,10 +22,15 @@
 				var obj = this,
 					$products = obj.$leftSelection.find('.product');
 				
-				// Returns the index of each product clicked
-				$products.on('click', function(){
-					var index = $(this).index();
-					console.log('index #: ', index);
+				// Returns the selected product's data()
+				$products.each(function (i, el) {
+					$(el).on('click', function(){
+						
+						var $selection = $(this);
+						console.log('product selection index: ' + i);
+						console.log('product selection data: ', $selection.data());
+
+					});
 				});
 
 			}
