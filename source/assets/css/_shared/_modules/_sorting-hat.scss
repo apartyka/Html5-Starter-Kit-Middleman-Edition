@@ -4,39 +4,73 @@
 	position: relative;
 	/* non rxd properties below */
 	margin: 0 auto;
-	width: 768px;
+	width: 790px;
 
-	.col {
-		// outline: 1px solid green;
+	h4 {
+		background-color: $color-black;
+		color: $color-white;
+		margin-left: $default-space--smallest;
+		margin-right: $default-space--smallest;
+	}
+
+	.left-selection {
+		position: relative;
+		z-index: 2;
 	}
 
 	/* non rxd properties below */
 	.right-selection {
+		position: relative;
+		z-index: 2;
+		
 		.product {
-			height: 112px;
-			width: 82px;
+			img {
+				height: 152px;
+				width: 93px;
+			}
 		}
 	}
 
 	.product {
 		cursor: pointer;
-		outline: 1px solid #625e5e;
-		text-align: center;
+		display: inline-block;
+		border: 1px solid #625e5e;
 		/* non rxd properties below */
-		height: 119px;
-		width: 113px;
+		img {
+			height: 119px;
+			width: 119px;
+		}
 
 		&.selected,
 		&:hover {
-			outline: 1px solid red;
+			border: 1px solid red;
 		}
 	}
 
 	.selection-container {
+		left: 243px;
+		position: absolute;
+		z-index: 1;
+
 		/* Override column styles */
 		.product {
+			border: none;
 			float: none;
 			width: auto;
+		}
+
+		#tops {
+			img {
+				width: 250px;
+				height: 270px;
+			}
+		}
+
+		#bottoms {
+			img {
+				width: 250px;
+				height: 400px;
+			}
 		}
 	}
 }

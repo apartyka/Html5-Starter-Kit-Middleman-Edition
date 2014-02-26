@@ -27,7 +27,7 @@
 					// Attach the index to each element as a data attrib
 					$(el).attr('data-index', i);
 
-					$(el).on('click', function(){
+					$(el).on('click', function() {
 						
 						var $selection = $(this);
 						console.log('product selection index: ' + i);
@@ -50,10 +50,12 @@
 					$(el).attr('data-index', i);
 
 					$(el).on('click', function(){
-						
+						//e.preventDefault();
 						var $selection = $(this);
 						console.log('product selection index: ' + i);
 						console.log('product selection data: ', $selection.data());
+
+						// app.quickView.show({ url: this.href, source: "quickview" })
 
 					});
 				});
@@ -90,9 +92,9 @@
 		        var obj = this;
 
 		        // Init other methods	        
-		        obj.selectedOnInit();
 		        obj.leftProducts();
 		        obj.rightProducts();
+		        obj.selectedOnInit();
 
 		        // store some data
 		        obj.$sortingHat.data({

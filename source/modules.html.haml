@@ -40,38 +40,96 @@ description: "The Page Description"
   .sorting-hat.col-wrap.flc.padding--verticals
     .left-selection.tops.col.col-3.align-center
       %h4 Tops That Suit You
-      .swatches.col-wrap.flc
-        %a{ :class => 'product tops-Blk_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
-          First product left side
-        %a{ :class => 'product tops-CoralTipping_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
-        %a{ :class => 'product tops-Coral_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
-        %a{ :class => 'product tops-DenimSailor_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
-        %a{ :class => 'product tops-FrostTaupe_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
-        %a{ :class => 'product tops-Green_Tan_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
-        %a{ :class => 'product tops-Jean_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
-        %a{ :class => 'product tops-Navy_Jacket_NORED col margin--verticals', :data => { :leftSide => 'bar' } }
-        %a{ :class => 'product tops-Railroad_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
-        %a{ :class => 'product tops-Tan_Jacket col margin--verticals', :data => { :leftSide => 'bar' } }
+      
+      .swatches.col-wrap.flc.margin--verticals--half          
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/Blk_Jacket.jpg', :alt => ''
+        .col.col-2  
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/Coral_Jacket.jpg', :alt => ''
+        
+      .swatches.col-wrap.flc.margin--verticals--half  
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/CoralTipping_Jacket.jpg', :alt => ''
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/DenimSailor_Jacket.jpg', :alt => ''
+      
+      .swatches.col-wrap.flc.margin--verticals--half  
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/FrostTaupe_Jacket.jpg', :alt => ''
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/Green_Tan_Jacket.jpg', :alt => ''
+      
+      .swatches.col-wrap.flc.margin--verticals--half        
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/Jean_Jacket.jpg', :alt => ''
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/Navy_Jacket_NORED.jpg', :alt => ''
+      
+      .swatches.col-wrap.flc.margin--verticals--half  
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/Railroad_Jacket.jpg', :alt => ''
+        .col.col-2
+          %a{ :class => 'product', :data => { :leftSide => 'bar' } }
+            =image_tag 'sortingHat/tops/Tan_Jacket.jpg', :alt => ''
 
-    .selection-container.col.col-5.align-center
-      #tops.padding--verticals
-        Tops Selection
-      #bottoms.padding--verticals
-        Bottoms Selection
+    .selection-container.align-center
+      #tops.padding-bottom
 
-    .right-selection.bottoms.col.col-5-2.align-center      
+      #bottoms.padding-top
+
+    .right-selection.bottoms.fl-right.col-5-2.align-center      
       %h4 Bottoms That Suit You
-      .swatches.col-wrap.flc
-        %a{ :class => 'product bottoms-Blue_Polka_Skirt col margin--verticals', :data => { :rightSide => 'bar' } }
-          First product right side
-        %a{ :class => 'product bottoms-Coral_Pant col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Coral_Skirt col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Denim_Jean col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Denim_Suit_Pant col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Graphite_Pant col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Graphite_Skirt col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Green_Capri_009 col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-LT_Tan_Pant col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Navy_Capri col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Navy_Pant col margin--verticals', :data => { :rightSide => 'bar' } }
-        %a{ :class => 'product bottoms-Railroad_Pant col margin--verticals', :data => { :rightSide => 'bar' } } 
+      
+      .swatches.col-wrap.flc.margin--verticals--half 
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Blue_Polka_Skirt.jpg', :alt => ''
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Coral_Pant.jpg', :alt => ''
+        
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Coral_Skirt.jpg', :alt => ''
+        
+      .swatches.col-wrap.flc.margin--verticals--half
+        .col.col-3  
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Denim_Jean.jpg', :alt => ''
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Denim_Suit_Pant.jpg', :alt => ''
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Graphite_Pant.jpg', :alt => ''          
+      
+      .swatches.col-wrap.flc.margin--verticals--half
+        .col.col-3  
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Graphite_Skirt.jpg', :alt => ''
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Green_Capri_009.jpg', :alt => ''
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/LT_Tan_Pant.jpg', :alt => ''
+      
+      .swatches.col-wrap.flc.margin--verticals--half  
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Navy_Capri.jpg', :alt => ''
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } }
+            =image_tag 'sortingHat/bottoms/Navy_Pant.jpg', :alt => ''
+        .col.col-3
+          %a{ :class => 'product', :data => { :rightSide => 'bar' } } 
+            =image_tag 'sortingHat/bottoms/Railroad_Pant.jpg', :alt => ''
