@@ -2,14 +2,28 @@
 
 .sorting-hat {
 	position: relative;
+	/* non rxd properties below */
+	margin: 0 auto;
+	width: 768px;
 
 	.col {
-		outline: 1px solid green;
+		// outline: 1px solid green;
+	}
+
+	/* non rxd properties below */
+	.right-selection {
+		.product {
+			width: 82px;
+		}
 	}
 
 	.product {
 		cursor: pointer;
+		outline: 1px solid #625e5e;
 		text-align: center;
+		/* non rxd properties below */
+		height: 119px;
+		width: 113px;
 
 		&.selected,
 		&:hover {
