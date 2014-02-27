@@ -33,48 +33,41 @@
 
 					// Clone helper function
 					obj.copy($selectedProduct, $target);
-					
+
 					$parent.find('.selected').removeClass('selected');
-					
+
 					$selectedProduct.addClass('selected');
 
 				});
 
 			};
 
-			// Selection made in the left panel
-			this.leftSelectEvents = function () {
+			// Selection made in left and right panels
+			this.initSelections = function () {
 				
 				var obj = this,
-					$parent = obj.$leftSelection,
-					$products = obj.$leftSelection.find('.product'),
-					$topsContainer = obj.$topsSelection;
+					$leftParent = obj.$leftSelection,
+					$rightParent = obj.$rightSelection,
+					$leftProducts = obj.$leftSelection.find('.product'),
+					$rightProducts = obj.$rightSelection.find('.product'),
+					$topsContainer = obj.$topsSelection,
+					$bottomsContainer = obj.$bottomsSelection;				
 
-				$products.each(function (i, el) {
+				$leftProducts.each(function (i, el) {
 
-					obj.selectProduct(i, el, $parent, $topsContainer);
+					obj.selectProduct(i, el, $leftParent, $topsContainer);
+
+				});
+
+				$rightProducts.each(function (i, el) {
+
+					obj.selectProduct(i, el, $rightParent, $bottomsContainer);
 
 				});
 
 			};
 
-			// Selection made in the right panel
-			this.rightSelectEvents = function () {
-				
-				var obj = this,
-					$parent = obj.$rightSelection,
-					$products = obj.$rightSelection.find('.product'),
-					$bottomsContainer = obj.$bottomsSelection;
-
-				$products.each(function (i, el) {
-
-					obj.selectProduct(i, el, $parent, $bottomsContainer);
-
-				});
-
-			};
-
-			/* Empty target container and clone selected product in to it
+			/* Clone selected product in to empty container
 			   @params: product = the element that is being cloned
 			 			target = the div the clone is inserted in to
 			*/
@@ -100,6 +93,19 @@
 					$topsContainer = obj.$topsSelection,
 					$bottomsContainer = obj.$bottomsSelection;
 				
+
+				function randSelect(c) {
+				    var o = [];
+				    for (var i = 0; i < c; i++) {
+				        var n = Math.floor(Math.random()*c);
+				        if( jQuery.inArray(n, o) > 0 ) --i;
+				        else o.push(n);
+				    }
+				    return o;
+				}	
+
+				console.log(randSelect(obj.$leftSelection.find('.product').size()));	
+
 				// Short way of adding a class to two objects
 				$(firstItemLeft).add(firstItemRight).addClass('selected');
 
@@ -115,8 +121,7 @@
 		        var obj = this;
 
 		        // Init other methods	        
-		        obj.leftSelectEvents();
-		        obj.rightSelectEvents();
+		        obj.initSelections();
 		        obj.selectedOnInit();
 
 		        // store some data
