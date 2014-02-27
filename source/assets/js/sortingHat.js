@@ -12,6 +12,35 @@
 			this.$topsSelection = $(el).find('#tops'),
 			this.$bottomsSelection = $(el).find('#bottoms');
 
+			/* Individual "select" events
+			   @params: index = position of each item in the array
+						product = individual element that is clicked
+						$parent = the parent div
+						$target = the target div each product is cloned to
+			*/			
+			this.selectProduct = function (index, product, $parent, $target) {
+
+				var obj = this;
+
+				$(product).attr('data-index', index);
+
+				$(product).on('click', function(e) {
+					
+					e.preventDefault();
+					
+					var $selectedProduct = $(this);
+
+					// Clone helper function
+					obj.copy($selectedProduct, $target);
+					console.log($selectedProduct.data());
+					$parent.find('.selected').removeClass('selected');
+					
+					$selectedProduct.addClass('selected');
+
+				});
+
+			};
+
 			// Selection made in the left panel
 			this.leftSelectEvents = function () {
 				
@@ -20,25 +49,9 @@
 					$products = obj.$leftSelection.find('.product'),
 					$topsContainer = obj.$topsSelection;
 
-				$products.each(function (i, el) {														
-										
-					// Attach the index to each element as a data attrib
-					$(el).attr('data-index', i);
+				$products.each(function (i, el) {
 
-					$(el).on('click', function(e) {
-						
-						e.preventDefault();
-						
-						var $selectedProduct = $(this);
-
-						// Clone helper function
-						obj.copy($selectedProduct, $topsContainer);
-
-						$parent.find('.selected').removeClass('selected');
-						
-						$selectedProduct.addClass('selected');
-
-					});
+					obj.selectProduct(i, el, $parent, $topsContainer);
 
 				});
 
@@ -53,31 +66,29 @@
 					$bottomsContainer = obj.$bottomsSelection;
 
 				$products.each(function (i, el) {
-					
-					// Attach the index to each element as a data attrib
-					$(el).attr('data-index', i);
 
-					$(el).on('click', function(e) {
-						
-						e.preventDefault();
-						
-						var $selectedProduct = $(this);
+					obj.selectProduct(i, el, $parent, $bottomsContainer);
 
-						// Clone helper function
-						obj.copy($selectedProduct, $bottomsContainer);
-
-						$parent.find('.selected').removeClass('selected');
-						
-						$selectedProduct.addClass('selected');
-
-						// app.quickView.show({ url: this.href, source: "quickview" })
-
-					});
 				});
 
 			};
 
-			// Return "active" state for the first item in each side
+			/* Empty target container and clone selected product in to it
+			   @params: product = the element that is being cloned
+			 			target = the div the clone is inserted in to
+			*/
+			this.copy = function (product, target) {
+				
+				var obj = this,
+					$clone = $(product).clone(true);
+
+				$(target).empty();
+
+				$clone.appendTo(target);
+
+			};
+
+			// Return "selected" state for the first item in each side
 			this.selectedOnInit = function () {
 				
 				var obj = this,
@@ -97,20 +108,7 @@
 
 			};
 
-			// Empty target container and clone selected product in to it
-			// @params: product = the element that is being cloned
-			// 			target = the div the clone is inserted in to
-			this.copy = function (product, target) {
-				
-				var obj = this,
-					$clone = $(product).clone(true);
-
-				$(target).empty();
-
-				$clone.appendTo(target);
-
-			};
-
+			// Private init kicks everything off
 			this.init = function (index) {
 
 		        var obj = this;
@@ -128,7 +126,6 @@
 				console.log("SortingHat private init");
 				console.log('obj.$sortingHat.data', obj.$sortingHat.data());
 		    };
-
 
 		};
 
