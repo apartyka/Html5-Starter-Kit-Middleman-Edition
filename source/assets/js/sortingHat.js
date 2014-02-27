@@ -12,7 +12,7 @@
 			this.$topsSelection = $(el).find('#tops'),
 			this.$bottomsSelection = $(el).find('#bottoms');
 
-			/* Individual "select" events
+			/* Individual "select" events. Called within leftSelectEvents() and RightSelectEvents()
 			   @params: index = position of each item in the array
 						product = individual element that is clicked
 						$parent = the parent div
@@ -22,6 +22,7 @@
 
 				var obj = this;
 
+				// Add the index as a data attrib
 				$(product).attr('data-index', index);
 
 				$(product).on('click', function(e) {
@@ -32,7 +33,7 @@
 
 					// Clone helper function
 					obj.copy($selectedProduct, $target);
-					console.log($selectedProduct.data());
+					
 					$parent.find('.selected').removeClass('selected');
 					
 					$selectedProduct.addClass('selected');

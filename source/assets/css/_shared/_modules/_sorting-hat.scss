@@ -1,8 +1,10 @@
 // Sorting hat is @imported into modules-master.scss
 
+/* ==========================================================================
+Sorting hat module
+========================================================================== */
 .sorting-hat {
 	position: relative;
-	/* non rxd properties below */
 	margin: 0 auto;
 	width: 790px;
 
@@ -18,16 +20,12 @@
 		z-index: 2;
 	}
 
-	/* non rxd properties below */
 	.right-selection {
-		position: relative;
-		z-index: 2;
+		@extend .left-selection;
 		
-		.product {
-			img {
-				height: 152px;
-				width: 93px;
-			}
+		img {
+			height: 152px;
+			width: 93px;
 		}
 	}
 
@@ -35,7 +33,7 @@
 		cursor: pointer;
 		display: inline-block;
 		border: 1px solid #ccc;
-		/* non rxd properties below */
+
 		img {
 			height: 119px;
 			width: 119px;
@@ -52,7 +50,6 @@
 		position: absolute;
 		z-index: 1;
 
-		/* Override column styles */
 		.product {
 			border: none;
 			float: none;
