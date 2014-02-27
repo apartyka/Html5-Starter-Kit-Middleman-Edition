@@ -21,11 +21,14 @@ Sorting hat module
 	}
 
 	.right-selection {
-		@extend .left-selection;
+		position: relative;
+		z-index: 2;
 		
-		img {
-			height: 152px;
-			width: 93px;
+		.product {
+			img {
+				height: 152px;
+				width: 93px;
+			}
 		}
 	}
 
