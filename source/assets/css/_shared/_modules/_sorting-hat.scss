@@ -34,7 +34,7 @@
 	.product {
 		cursor: pointer;
 		display: inline-block;
-		border: 1px solid #625e5e;
+		border: 1px solid #ccc;
 		/* non rxd properties below */
 		img {
 			height: 119px;
@@ -43,7 +43,7 @@
 
 		&.selected,
 		&:hover {
-			border: 1px solid red;
+			border: 1px solid $color-black;
 		}
 	}
 

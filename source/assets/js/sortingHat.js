@@ -12,26 +12,31 @@
 			this.$topsSelection = $(el).find('#tops'),
 			this.$bottomsSelection = $(el).find('#bottoms');
 
-			// console.log(this.$leftSelection);
-			// console.log(this.$rightSelection);
-			// console.log(this.$topsSelection);
-			// console.log(this.$bottomsSelection);
-
-			this.leftProducts = function () {
+			// Selection made in the left panel
+			this.leftSelectEvents = function () {
 				
 				var obj = this,
-					$products = obj.$leftSelection.find('.product');
+					$parent = obj.$leftSelection,
+					$products = obj.$leftSelection.find('.product'),
+					$topsContainer = obj.$topsSelection;
 
 				$products.each(function (i, el) {														
-					
+										
 					// Attach the index to each element as a data attrib
 					$(el).attr('data-index', i);
 
-					$(el).on('click', function() {
+					$(el).on('click', function(e) {
 						
-						var $selection = $(this);
-						console.log('product selection index: ' + i);
-						console.log('product selection data: ', $selection.data());
+						e.preventDefault();
+						
+						var $selectedProduct = $(this);
+
+						// Clone helper function
+						obj.copy($selectedProduct, $topsContainer);
+
+						$parent.find('.selected').removeClass('selected');
+						
+						$selectedProduct.addClass('selected');
 
 					});
 
@@ -39,21 +44,31 @@
 
 			};
 
-			this.rightProducts = function () {
+			// Selection made in the right panel
+			this.rightSelectEvents = function () {
 				
 				var obj = this,
-					$products = obj.$rightSelection.find('.product');
+					$parent = obj.$rightSelection,
+					$products = obj.$rightSelection.find('.product'),
+					$bottomsContainer = obj.$bottomsSelection;
 
 				$products.each(function (i, el) {
 					
 					// Attach the index to each element as a data attrib
 					$(el).attr('data-index', i);
 
-					$(el).on('click', function(){
-						//e.preventDefault();
-						var $selection = $(this);
-						console.log('product selection index: ' + i);
-						console.log('product selection data: ', $selection.data());
+					$(el).on('click', function(e) {
+						
+						e.preventDefault();
+						
+						var $selectedProduct = $(this);
+
+						// Clone helper function
+						obj.copy($selectedProduct, $bottomsContainer);
+
+						$parent.find('.selected').removeClass('selected');
+						
+						$selectedProduct.addClass('selected');
 
 						// app.quickView.show({ url: this.href, source: "quickview" })
 
@@ -82,9 +97,18 @@
 
 			};
 
-			// @param the element that is being cloned
-			this.cloneProduct = function (product) {
-				var obj = this;
+			// Empty target container and clone selected product in to it
+			// @params: product = the element that is being cloned
+			// 			target = the div the clone is inserted in to
+			this.copy = function (product, target) {
+				
+				var obj = this,
+					$clone = $(product).clone(true);
+
+				$(target).empty();
+
+				$clone.appendTo(target);
+
 			};
 
 			this.init = function (index) {
@@ -92,8 +116,8 @@
 		        var obj = this;
 
 		        // Init other methods	        
-		        obj.leftProducts();
-		        obj.rightProducts();
+		        obj.leftSelectEvents();
+		        obj.rightSelectEvents();
 		        obj.selectedOnInit();
 
 		        // store some data
