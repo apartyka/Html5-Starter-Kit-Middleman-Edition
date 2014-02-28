@@ -6,11 +6,39 @@
 		
 		var SortingHat = function (el) {
 
+			// Master objects
 			this.$sortingHat = $(el),
+			
 			this.$leftSelection = $(el).find('.left-selection'),
+			this.$leftItems = this.$leftSelection.find('.product'),
+			
 			this.$rightSelection = $(el).find('.right-selection'),
+			this.$rightItems = this.$rightSelection.find('.product'),
+
 			this.$topsSelection = $(el).find('#tops'),
 			this.$bottomsSelection = $(el).find('#bottoms');
+			
+			// work in progress
+			this.populateImages = function () {
+				var obj = this,
+					$leftProducts = obj.$leftItems;
+					
+				$leftProducts.each(function (i, el) {
+					
+					var href = $(el).attr('href'),
+						images = $(this).find('img'),
+						alt = $(images).attr('alt'),
+						
+						imgSrc = images.attr('src');
+
+						// console.log('image: ', images);
+						// console.log('image src: ', imgSrc);
+						// console.log('alt: ', alt);
+						// console.log('href: ', href);
+
+				});
+
+			};
 
 			/* Individual "select" events. Called within leftSelectEvents() and RightSelectEvents()
 			   @params: index = position of each item in the array
@@ -47,9 +75,11 @@
 				
 				var obj = this,
 					$leftParent = obj.$leftSelection,
+					$leftProducts = obj.$leftItems,
+					
 					$rightParent = obj.$rightSelection,
-					$leftProducts = obj.$leftSelection.find('.product'),
-					$rightProducts = obj.$rightSelection.find('.product'),
+					$rightProducts = obj.$rightItems,
+					
 					$topsContainer = obj.$topsSelection,
 					$bottomsContainer = obj.$bottomsSelection;
 
@@ -87,13 +117,13 @@
 				
 				var obj = this,
 					
-					leftItems = obj.$leftSelection.find('.product'),
+					leftItems = obj.$leftItems,
 					leftSize = obj.itemSize(leftItems),					
 					randomLeftnum = obj.selectRandom(leftSize),
 					randomLeftitem = leftItems[randomLeftnum],
 					$leftClone = $(randomLeftitem).clone(true),
 					
-					rightItems = obj.$rightSelection.find('.product'),
+					rightItems = obj.$rightItems,
 					rightSize = obj.itemSize(rightItems),
 					randomRightnum = obj.selectRandom(rightSize),
 					randomRightitem = rightItems[randomRightnum],
@@ -134,7 +164,8 @@
 
 		        var obj = this;
 
-		        // Init other methods	        
+		        // Init private methods
+		        obj.populateImages(); // work in progress - would like to populate each images src, alt, and parent href values from json obj
 		        obj.initSelections();
 		        obj.selectedOnInit();
 
