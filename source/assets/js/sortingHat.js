@@ -51,7 +51,7 @@
 					$leftProducts = obj.$leftSelection.find('.product'),
 					$rightProducts = obj.$rightSelection.find('.product'),
 					$topsContainer = obj.$topsSelection,
-					$bottomsContainer = obj.$bottomsSelection;				
+					$bottomsContainer = obj.$bottomsSelection;
 
 				$leftProducts.each(function (i, el) {
 
@@ -86,32 +86,46 @@
 			this.selectedOnInit = function () {
 				
 				var obj = this,
-					firstItemLeft = obj.$leftSelection.find('.product')[0],
-					firstItemRight = obj.$rightSelection.find('.product')[0],
-					$leftClone = $(firstItemLeft).clone(true),
-					$rightClone = $(firstItemRight).clone(true),
+					
+					leftItems = obj.$leftSelection.find('.product'),
+					leftSize = obj.itemSize(leftItems),					
+					randomLeftnum = obj.selectRandom(leftSize),
+					randomLeftitem = leftItems[randomLeftnum],
+					$leftClone = $(randomLeftitem).clone(true),
+					
+					rightItems = obj.$rightSelection.find('.product'),
+					rightSize = obj.itemSize(rightItems),
+					randomRightnum = obj.selectRandom(rightSize),
+					randomRightitem = rightItems[randomRightnum],
+					$rightClone = $(randomRightitem).clone(true),
+					
 					$topsContainer = obj.$topsSelection,
 					$bottomsContainer = obj.$bottomsSelection;
 				
-
-				function randSelect(c) {
-				    var o = [];
-				    for (var i = 0; i < c; i++) {
-				        var n = Math.floor(Math.random()*c);
-				        if( jQuery.inArray(n, o) > 0 ) --i;
-				        else o.push(n);
-				    }
-				    return o;
-				}	
-
-				console.log(randSelect(obj.$leftSelection.find('.product').size()));	
-
 				// Short way of adding a class to two objects
-				$(firstItemLeft).add(firstItemRight).addClass('selected');
+				$(randomLeftitem).add(randomRightitem).addClass('selected');
 
-				// Copy each firstItem in to target container
+				// Copy each cloned item in to a target container
 				$leftClone.appendTo($topsContainer);
 				$rightClone.appendTo($bottomsContainer);
+
+			};
+
+			/*	Select random item helper
+				@param: arr = length of an array or $.size()
+			*/
+			this.selectRandom = function (arr) {
+
+				return Math.floor(Math.random() * arr);
+
+			};
+
+			/*	Length of array or jQuery obj
+				@param: arr = array or jQuery obj
+			*/
+			this.itemSize = function (arr) {
+
+				return arr.length;
 
 			};
 
