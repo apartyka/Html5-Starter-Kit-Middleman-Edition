@@ -38,8 +38,10 @@
 							var href = $(this).attr('href');
 
 							console.log('selectionEvent click');
-							console.log(href);
-
+							
+							// Updates to analytics
+							obj.updateTracking('Selected Product: ', href);
+							
 							// Launch quickView for selected product
 							//app.quickView.show({url: href, source: "quickview"});
 
@@ -88,7 +90,8 @@
 					
 					e.preventDefault();
 					
-					var $selectedProduct = $(this);
+					var $selectedProduct = $(this),
+						href = $(this).attr('href');
 
 					// Clone helper function
 					obj.copy($selectedProduct, $target);
@@ -97,7 +100,8 @@
 
 					$selectedProduct.addClass('selected');
 					
-					console.log('selectProduct() click');
+					// Updates to analytics
+					obj.updateTracking('Click of Product: ', href);
 
 				});
 
@@ -179,6 +183,30 @@
 				
 			};
 
+			/*	Update custom tracking values
+				@param: url = href value of a selected product
+						str = string to identify the tracking
+			*/
+			this.updateTracking = function(str, url) {
+
+				// Split the href at '?dwvar_', return the last piece of the array created
+				var piece = url.split('?dwvar_').pop(),
+					slice = piece.slice(8, 18), // remove colorCode=
+					replaced = piece.replace(slice, ""), // replace sliced out string with empty string
+					value = replaced.split('&').shift(), // remove any random garbage & at the end of the string
+					str;
+					console.log(replaced.split('&').shift());
+				
+				window.eVar55 = str + value;			
+				console.log(eVar55);
+				// var s_code = s.t();
+
+				// if( s_code ) {
+				// 	document.write(s_code);
+				// }
+
+			};
+
 			/*	Select random item helper
 				@param: arr = length of an array or $.size()
 			*/
@@ -243,14 +271,9 @@
 	/* Initialize module when App is ready
     -------------------------------------------------------------------------- */
 	$(window).on('App.modules', function () {
+        
         App.modules.sorting_hat().init();
 
-        // Bind quickview events
-		// $(document).on('click', '.product', function() {
-		// 			console.log($(this).attr('href'));
-		// 			//console.log($(this));
-		// 			console.log('click');
-		// 		});
     });
 
 }( jQuery, window, document, undefined ));
