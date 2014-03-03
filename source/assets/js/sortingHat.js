@@ -19,6 +19,9 @@
 			this.$topsSelection = $(el).find('#tops'),
 			this.$bottomsSelection = $(el).find('#bottoms');
 			
+			/* Event(s) for selections made in center column. Called in copy().
+			   @params: clone = the cloned product						
+			*/
 			this.selectionEvent = function (clone) {
 				var obj = this,
 					selectionContainer = obj.$selectionContainer,
@@ -36,6 +39,8 @@
 
 							console.log('selectionEvent click');
 							console.log(href);
+
+							// Launch quickView for selected product
 							//app.quickView.show({url: href, source: "quickview"});
 
 							return false;
