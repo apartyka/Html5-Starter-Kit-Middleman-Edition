@@ -15,9 +15,31 @@
 			this.$rightSelection = $(el).find('.right-selection'),
 			this.$rightItems = this.$rightSelection.find('.product'),
 
+			this.$selectionContainer = $(el).find('.selection-container'),
 			this.$topsSelection = $(el).find('#tops'),
 			this.$bottomsSelection = $(el).find('#bottoms');
 			
+			this.selectionEvent = function (clone) {
+				var obj = this,
+					selectionContainer = obj.$selectionContainer,
+					selections = selectionContainer.find('.product');
+
+					selections.each(function(i, clone){
+						// console.log($(this));
+
+						$(clone).on('click', function(e) {
+							e.preventDefault();
+							//console.log($(this));
+
+							var href = $(this).attr('href');
+
+							console.log('selectionEvent click: ', $(this));
+							console.log('selection href: ', href);
+							//app.quickview.show()
+						});
+					});
+			};
+
 			// work in progress
 			this.populateImages = function () {
 				var obj = this,
@@ -40,7 +62,7 @@
 
 			};
 
-			/* Individual "select" events. Called within leftSelectEvents() and RightSelectEvents()
+			/* Individual "select" events. Called within initSelections()
 			   @params: index = position of each item in the array
 						product = individual element that is clicked
 						$parent = the parent div
@@ -65,9 +87,30 @@
 					$parent.find('.selected').removeClass('selected');
 
 					$selectedProduct.addClass('selected');
-
+					
+					console.log('selectProduct() click');
+					//console.log($selectedProduct);
 				});
 
+			};
+
+			/* Clone selected product in to empty container
+			   @params: product = the element that is being cloned
+			 			target = the div the clone is inserted in to
+			*/
+			this.copy = function (product, target) {
+				
+				var obj = this,
+					$clone = $(product).clone(true);
+
+				// use of empty here is removing all events bound
+				$(target).empty();
+				
+				$clone.appendTo(target);
+
+				// Bind quickview events ?
+				//console.log($clone.attr('href'));
+				obj.selectionEvent($clone);
 			};
 
 			// Selection made in left and right panels
@@ -97,20 +140,6 @@
 
 			};
 
-			/* Clone selected product in to empty container
-			   @params: product = the element that is being cloned
-			 			target = the div the clone is inserted in to
-			*/
-			this.copy = function (product, target) {
-				
-				var obj = this,
-					$clone = $(product).clone(true);
-
-				$(target).empty();
-
-				$clone.appendTo(target);
-
-			};
 
 			// Return "selected" state for the first item in each side
 			this.selectedOnInit = function () {
@@ -138,7 +167,7 @@
 				// Copy each cloned item in to a target container
 				$leftClone.appendTo($topsContainer);
 				$rightClone.appendTo($bottomsContainer);
-
+				
 			};
 
 			/*	Select random item helper
@@ -168,6 +197,7 @@
 		        obj.populateImages(); // work in progress - would like to populate each images src, alt, and parent href values from json obj
 		        obj.initSelections();
 		        obj.selectedOnInit();
+		        obj.selectionEvent();
 
 		        // store some data
 		        obj.$sortingHat.data({
@@ -194,7 +224,7 @@
                     App.objects.sorting_hat[i] = new SortingHat(el);
                     App.objects.sorting_hat[i].init(i);
 
-                });
+                });                
 
             }
 	    };
@@ -205,6 +235,13 @@
     -------------------------------------------------------------------------- */
 	$(window).on('App.modules', function () {
         App.modules.sorting_hat().init();
+
+        // Bind quickview events
+		// $(document).on('click', '.product', function() {
+		// 			console.log($(this).attr('href'));
+		// 			//console.log($(this));
+		// 			console.log('click');
+		// 		});
     });
 
 }( jQuery, window, document, undefined ));
