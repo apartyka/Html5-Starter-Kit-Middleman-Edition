@@ -24,19 +24,23 @@
 					selectionContainer = obj.$selectionContainer,
 					selections = selectionContainer.find('.product');
 
-					selections.each(function(i, clone){
-						// console.log($(this));
+					selections.each(function(i, clone){						
+
+						// Unbind first otherwise the following click will duplicate
+						$(clone).unbind('click');
 
 						$(clone).on('click', function(e) {
 							e.preventDefault();
-							//console.log($(this));
 
 							var href = $(this).attr('href');
 
-							console.log('selectionEvent click: ', $(this));
-							console.log('selection href: ', href);
-							//app.quickview.show()
+							console.log('selectionEvent click');
+							console.log(href);
+							//app.quickView.show({url: href, source: "quickview"});
+
+							return false;
 						});
+
 					});
 			};
 
@@ -89,7 +93,7 @@
 					$selectedProduct.addClass('selected');
 					
 					console.log('selectProduct() click');
-					//console.log($selectedProduct);
+
 				});
 
 			};
@@ -103,12 +107,12 @@
 				var obj = this,
 					$clone = $(product).clone(true);
 
-				// use of empty here is removing all events bound
+				// Use of empty here is removing all events bound
 				$(target).empty();
 				
 				$clone.appendTo(target);
 
-				// Bind quickview events ?
+				// Bind quickview events to clone
 				//console.log($clone.attr('href'));
 				obj.selectionEvent($clone);
 			};
