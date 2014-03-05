@@ -1,19 +1,101 @@
-// Sorting hat is @imported into components-master.scss
+// Sorting hat is @imported into modules-master.scss
 
+/* ==========================================================================
+Sorting hat module
+========================================================================== */
 .sorting-hat {
-	.col {
-		outline: 1px solid green;
+	position: relative;
+	margin: 0 auto;
+	width: 790px;
+
+	.heading {
+		background-color: $color-black;
+		color: $color-white;
+		margin-left: $default-space--smallest;
+		margin-right: $default-space--smallest;
 	}
 
-	#result {
-		text-align: center;
+	.left-selection {
+		position: relative;
+		z-index: 2;
 	}
 
-	.selection {
+	.right-selection {
+		position: relative;
+		z-index: 2;
 		
+		.product {
+			img {
+				height: 152px;
+				width: 93px;
+			}
+		}
 	}
 
-	.right-side {
-		text-align: right;
+	.product {
+		cursor: pointer;
+		display: inline-block;
+		border: 1px solid #ccc;
+
+		img {
+			height: 119px;
+			width: 119px;
+		}
+
+		&.selected,
+		&:hover {
+			border: 1px solid $color-black;
+		}
+	}
+
+	.selection-container {
+		left: 243px;
+		position: absolute;
+		z-index: 1;
+
+		.product {
+			border: none;
+			float: none;
+			width: auto;
+
+			&:hover {
+				.quickViewCta {
+					display: inline-block;
+				}
+			}
+		}
+
+		#tops {
+			position: relative;
+			
+			img {
+				width: 250px;
+				height: 270px;
+			}
+		}
+
+		#bottoms {
+			position: relative;	
+
+			img {
+				width: 250px;
+				height: 400px;
+			}
+		}
+	}
+
+	.quickViewCta {
+		background-color: #000;
+		border: 1px solid #f7f7f7;
+		color: #fff;
+		display: none;
+		left: 60px;
+		line-height: 28px;
+		padding: 3px 25px;
+		position: absolute;
+		text-transform: uppercase;
+		top: 180px;
+		zoom: 1;
+		z-index: 3;
 	}
 }

@@ -1,5 +1,5 @@
 /* ==========================================================================
-Custom Global Icons
+Custom Global Icons AND Sprites
 ========================================================================== */
 
 // Example @font-face rule
@@ -38,3 +38,12 @@ Custom Global Icons
 .icon-menu-mobile:before {
 	content: "\60";
 }
+
+
+// @import "sortingHat/tops/*.png";
+
+// @include all-tops-sprites;
+
+// @import "sortingHat/bottoms/*.png";
+
+// @include all-bottoms-sprites;
