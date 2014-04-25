@@ -4,13 +4,13 @@ set :markdown_engine, :redcarpet
 #Directory settings
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
-set :images_dir, 'assets/images'
+set :images_dir, 'assets/img'
 set :fonts_dir, 'assets/fonts'
 
 #Livereload
 #Windows users need to specify their development port - https://github.com/middleman/middleman-livereload/issues/26
-#activate :livereload, :host => '172.25.44.96' #Work
-activate :livereload, :host => '192.168.1.107' #House
+activate :livereload, :host => '172.25.56.138' #Work
+#activate :livereload, :host => '192.168.1.107' #House
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
@@ -56,8 +56,8 @@ configure :build do
   activate :relative_assets
 
   # Minify assets
-  activate :minify_css
-  activate :minify_javascript
+  #activate :minify_css
+  #activate :minify_javascript
   
   # Enable cache buster
   # activate :cache_buster
