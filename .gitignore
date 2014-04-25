@@ -196,8 +196,4 @@ node_modules/
 #Production Build
 _compiled
 build/
-<<<<<<< HEAD
 config.rb
-=======
-*.rb
->>>>>>> b96f47588677272b9a4fd6b4681e19eb980f5d35
