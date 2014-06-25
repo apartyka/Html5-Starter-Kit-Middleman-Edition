@@ -9,7 +9,7 @@ set :fonts_dir, 'assets/fonts'
 
 #Livereload
 #Windows users need to specify their development port - https://github.com/middleman/middleman-livereload/issues/26
-activate :livereload, :host => '172.25.56.138' #Work
+activate :livereload, :host => '172.25.44.99' #Work
 #activate :livereload, :host => '192.168.1.107' #House
 
 # Automatic image dimensions on image_tag helper
